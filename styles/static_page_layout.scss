@@ -1,0 +1,16 @@
+@media (max-width: 992px) {
+  .spl {
+    
+  }
+}
+
+@media (max-width: 768px) {
+  .spl {
+    flex-wrap: wrap;
+  }
+}
+
+.spl {
+  display: flex;
+  gap: 20px;
+}

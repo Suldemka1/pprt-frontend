@@ -1,0 +1,48 @@
+@media (max-width: 544) {
+  
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 40px;
+
+  padding: 20px;
+
+  box-shadow: drop-shadow(5px 5px 5px rgb(197, 197, 197));
+
+  border: 1px solid black;
+
+  border-radius: 5px;
+
+  color: white;
+
+  max-height: 500px !important;
+
+  min-width: 350px !important;
+
+  background: var(--background-color-footer);
+
+  .link {
+    display: flex;
+    align-items: center;
+
+    font-size: 1.25rem;
+
+    &:hover {
+      transform: scale(1.05);
+      transition-duration: 500ms;
+
+      color: white;
+    }
+    a {
+      margin-left: 15px;
+      font-weight: 900;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

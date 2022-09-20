@@ -1,0 +1,20 @@
+:root[data-theme='light'] {
+
+  --carousel-display: block;
+
+  //images
+  --image-grayscale: grayscale(0);
+
+  //styles for button
+  --button-background: rgb(40, 68, 138);
+  --button-font-color: #ffffff;
+
+
+  --header-bg-color: rgb(40, 68, 138);
+  --header-a-color: #ffffff;
+
+  --background-color-footer: rgb(40, 68, 138);
+
+
+  --card-footer-bg-color: rgba(0,0,0, 0.03);
+}
