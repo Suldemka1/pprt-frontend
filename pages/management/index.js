@@ -30,7 +30,7 @@ export default function Management({ staff }) {
 
   return (
     <div className="management">
-      <PageName title='Руководство министерства' />
+      <PageName title='Руководство полномочного представительства Республики Тыва в г. Москве' />
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'space-between' }}>
         {show}

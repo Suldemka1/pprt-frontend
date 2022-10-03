@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
@@ -52,15 +56,10 @@
 
   
   font-family: Roboto, sans-serif !important;
-
-
-  font-family: "Roboto", sans-serif;
 }
 
 html,
 body {
-
-  font-family: Robo;
 
   overflow-x: hidden;
 
@@ -179,10 +178,8 @@ img {
   .image {
     display: none;
     background-color: #000000;
-    position: fixed;
     object-fit: contain;
     width: auto !important;
-
     position: relative !important;
     height: unset !important;
   }

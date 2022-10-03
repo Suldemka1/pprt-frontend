@@ -23,12 +23,12 @@ const Footer = (props) =>
           </div>
 
           <div className={footer.info}>
-            <div><Link href="/document/sample.pdf"><a>Использование материалов</a></Link></div>
-            <div><Link href="/document/personal_data.docx"><a>О персональной информации пользователей</a></Link></div>
+            <div><Link href="/documents/sample.pdf"><a>Использование материалов</a></Link></div>
+            <div><Link href="/documents/personal_data.docx"><a>О персональной информации пользователей</a></Link></div>
             <div className={footer.social_media}>
-              <div className={footer.social_media_item}><Link href="/"><a><Image alt='some' src="/vk_logo.png" width={40} height={40} /></a></Link></div>
-              {/* <div className={footer.social_media_item}><Link href="/"><a><Image alt='some' src="/vk_logo.png" width={40} height={40} /></a></Link></div>
-              <div className={footer.social_media_item}><Link href="/"><a><Image alt='some' src="/vk_logo.png" width={40} height={40} /></a></Link></div> */}
+              <Link className={footer.social_media_item} href="https://vk.com/club132363710"><Image alt='some' src="/vk_logo.png" width={30} height={30} className={footer.image}/></Link>
+              <Link className={footer.social_media_item} href="https://t.me/polpredstvotuva"><Image alt='some' src="/tg_logo.png" width={30} height={30} className={footer.image}/></Link>
+              {/* <div className={footer.social_media_item}><Link href="/"><a><Image alt='some' src="/vk_logo.png" width={40} height={40} /></a></Link></div> */}
             </div>
           </div>
         </div>

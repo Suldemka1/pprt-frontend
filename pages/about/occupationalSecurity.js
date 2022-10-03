@@ -24,7 +24,7 @@ const OccupationalSecurity = ({ content }) =>
     <div>
       {parser(content?.content)}
 
-      <Link href={`${process.env.APIpath}${content?.file?.url}`} >{content?.file?.name}</Link>
+      {/* <Link href={`${process.env.APIpath}${content?.file?.url}`} >{content?.file?.name}</Link> */}
     </div>
   </>
 

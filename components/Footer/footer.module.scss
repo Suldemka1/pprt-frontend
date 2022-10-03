@@ -22,22 +22,16 @@
     justify-content: space-between;
     padding-bottom: 20px;
 
-
     .info {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
       .social_media {
         display: flex;
-        flex-direction: row;
-        width: 160px;
-        height: 40px;
         gap: 20px;
+        line-height: normal;
 
-        .social_media_item {
-          width: 40px !important;
-          height: 40px;
-        }
       }
     }
 

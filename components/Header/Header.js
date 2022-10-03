@@ -8,6 +8,7 @@ import { observer } from 'mobx-react-lite'
 import { FaSearch } from 'react-icons/fa'
 import theme from '../../store/theme'
 import { FaRegEye } from 'react-icons/fa'
+// import { Icon24LogoVkColor } from '@vkontakte/icons';
 
 const Header = observer((props, { children }) => {
 
@@ -26,10 +27,11 @@ const Header = observer((props, { children }) => {
       <div className={header.navbar_top}>
         <Container>
           <div className={header.navbar_top_content}>
-            <Image alt='some' src="/tuvan_herb.png" width={100} height={100} />
+            <Image alt='some' src="/herb.svg.png" width={100} height={100} />
             <Link href="/">Главная</Link>
             <Link href="/documents">Документы</Link>
             <Link href={'/sendrequest'}><a>Прием обращений</a></Link>
+            <Link href='https://vk.com/club132363710'><a></a></Link>
 
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', padding: '2px', border: '1px solid blue', backgroundColor: 'white', zIndex: '0', cursor: 'pointer' }}>
               <input type="text" placeholder={'Поиск'} onChange={(e) => searchQuery.search(e.target.value)} style={{ flexGrow: '2', border: 'none', outline: 'none' }} />
@@ -72,14 +74,13 @@ const Header = observer((props, { children }) => {
         </Container>
       </div>
 
-      <Navbar collapseOnSelect expand="lg" bg="light" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="justify-content-between flex-grow-1 pe-3">
-              <Link href='/about' className='mb-3 mt-3 font-size-3'>Об администрации</Link>
+              <Link href='/about' className='mb-3 mt-3 font-size-3'>О государственном органе</Link>
               <Link href='/activity' className='mb-3 mt-3 font-size-3'>Деятельность</Link>
-              <Link href='/projects' className='mb-3 mt-3 font-size-3'>Проекты</Link>
               <Link href='/press-service' className='mb-3 mt-3 font-size-3'>Пресс-служба</Link>
               <Link href='/contacts' className='mb-3 mt-3 font-size-3'>Контакты</Link>
             </Nav>

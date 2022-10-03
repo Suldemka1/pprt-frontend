@@ -17,10 +17,10 @@ export const VacancyCard = (params) =>
 
     </div>
 
-    <div className={vacancy.footer}>
+    {/* <div className={vacancy.footer}>
       <h6>Номер отдела кадров +73942225060</h6>
       <h6>email отдела кадров mineconom@rtyva.ru</h6>
-    </div>
+    </div> */}
   </div>
 
 

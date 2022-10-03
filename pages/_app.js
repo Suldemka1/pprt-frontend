@@ -33,8 +33,8 @@ const MyApp = observer(({ Component, pageProps }) => {
 
       <Header
         logosrc={`/tuvan_herb.png`}
-        // compressedName={'БотсадТувГУ'}
-        fullName={'Администрация сумона Кызыл-Чыраа'} />
+        // compressedName={'ППРТ в г. Москве'}
+        fullName={'Полномочное представительство Республики Тыва в г. Москве'} />
 
       <Container className='body-container'>
 
@@ -43,9 +43,9 @@ const MyApp = observer(({ Component, pageProps }) => {
       </Container>
 
       <Footer
-        mincompressedname={'Администрация сумона Кызыл-Чыраа'}
-        phone={'+79958857589'}
-        email={'ak-erik@mail.ru'} />
+        mincompressedname={'Полномочное представительство Республики Тыва в г. Москве'}
+        phone={'+7(499)236-48-01'}
+        email={'info@pprt17.ru'} />
     </MainLayout>
   )
 })
