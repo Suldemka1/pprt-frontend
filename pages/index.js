@@ -1,5 +1,4 @@
 import NewsCarousel from '../components/Carousel/Carousel'
-import { Pagination } from 'react-bootstrap'
 import { useRouter } from 'next/router'
 import { ImageLink } from '../components/Links'
 import Link from 'next/link'
@@ -37,23 +36,22 @@ export const getServerSideProps = async ({ query: { page = 1 } }) => {
 
 export default function Home({ content, news, page, pageSize, pageCount, total, links, sliderLinks }) {
 
-
   //жесткий говнокод, я опаздываю
   //считаю количество элементов пагинации и рисую их
   const router = useRouter()
   let active = page
   let items = [];
 
-  const paginationBasic = <Pagination size="lg" className='mt-4'>{items}</Pagination>
+  const paginationBasic = <div size="lg" className='flex items-center justify-center'>{items}</div>
 
   for (let number = 1; number <= pageCount; number++) {
     items.push(
-      <Pagination.Item key={number} active={number === active}
+      <button key={number} className="bg-blue-900 dark:bg-gray-500 border rounded px-3 py-2 text-white cursor-pointer" active={number === active}
         onClick={() => {
           router.push(`/?page=${number}`)
         }}>
         {number}
-      </Pagination.Item>,
+      </button>,
     );
   }
 
@@ -66,10 +64,11 @@ export default function Home({ content, news, page, pageSize, pageCount, total, 
       }
 
 
-      <div className='mainpage'>
-        <div className='news'>
+      <div className="py-5">
+
+        <div className='flex flex-col gap-4 md:w-5/5 lg:w-4/5'>
+
           {news.map((item) =>
-            <Link href={`/news/${item.id}`} key={item.id} className={'news'}>
               <PostCard
                 key={item.id}
                 id={item.id}
@@ -77,11 +76,9 @@ export default function Home({ content, news, page, pageSize, pageCount, total, 
                 preview_image={`${process.env.APIpath}` + item.preview_image.url}
                 news_preview={item.news_preview}
                 body={item.body}
-                // tags={item.tags.data}
                 createdAt={item.createdAt
                 }
               />
-            </Link>
           )}
 
           {paginationBasic}
@@ -89,7 +86,7 @@ export default function Home({ content, news, page, pageSize, pageCount, total, 
         </div >
 
         {/* ссылки справа, тоже просто передаются данные вовнутрь */}
-        <div className='right-bar'>
+        <div className='xs:w-4/5 md:w-1/5'>
           {
             links.map((item) =>
               <div key={item.id}>

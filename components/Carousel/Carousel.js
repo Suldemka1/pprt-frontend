@@ -1,52 +1,67 @@
-import { Carousel, Col, Row } from 'react-bootstrap'
 import Image from 'next/image'
-import styles from './carousel.module.scss'
-import Link from 'next/link'
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
+import {useCallback} from "react";
+import Link from "next/link";
 
 export default function NewsCarousel(params, sliderLinks) {
-  return (
-    <div className={styles.container}>
-      <Carousel className={styles.carousel}>
-        {
-          params.map((item) =>
+    const [emblaRef, emblaApi] = useEmblaCarousel({loop: true}, [Autoplay()])
 
-            <Carousel.Item key={item.id}>
-              <Image
-                src={`${process.env.APIpath}${item.image.url}`}
-                alt="First slide"
-                width={1280}
-                height={720}
-                objectFit='cover'
-                priority
-              />
-              <Carousel.Caption>
-                <h3>{item.title}</h3>
-                <p>{item.content}</p>
-              </Carousel.Caption>
-            </Carousel.Item>
+    const scrollPrev = useCallback(() => {
+        if (emblaApi) emblaApi.scrollPrev()
+    }, [emblaApi])
 
-          )
-        }
-      </Carousel>
+    const scrollNext = useCallback(() => {
+        if (emblaApi) emblaApi.scrollNext()
+    }, [emblaApi])
 
-      <div className={styles.advert}>
-        {
-          sliderLinks.map((item) => {
-            return (
-              <Link href={item.url} key={item.id}>
-                <a>
-                  <Image
-                    src={`${process.env.APIpath}${item.image.url}`}
-                    alt="First slide"
-                    width={320}
-                    height={240}
-                  />
-                </a>
-              </Link>
-            )
-          })
-        }
-      </div>
-    </div>
-  )
+    return (
+        <div className="flex xs:flex-col md:flex-row justify-between">
+
+            <div className="xs:w-full md:w-4/5">
+                <div className="overflow-hidden" ref={emblaRef}>
+                    <div className="flex">
+                        {
+                            params.map((item) =>
+
+                                <div key={item.id} className="flex-[0_0_100%]">
+                                    <Image
+                                        src={`${process.env.APIpath}${item.image.url}`}
+                                        alt="First slide"
+                                        width={960}
+                                        height={720}
+                                        layout="responsive"
+                                        objectFit='cover'
+                                        priority
+                                        className='dark:grayscale'
+                                    />
+                                </div>
+                            )
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div className="flex xs:flex-row md:flex-col justify-between xs:w-full md:w-1/5 min-w-40 min-h-40">
+
+                {
+                    sliderLinks.map((item) => {
+                        return (
+                            <Link href={process.env.APIpath + item.url} key={item.id} className="min-w-60 min-h-60">
+                                <Image
+                                    src={`${process.env.APIpath}${item.image.url}`}
+                                    alt="First slide"
+                                    width={250}
+                                    height={240}
+                                    layout={"responsive"}
+                                    objectFit={"contain"}
+                                    className="min-w-40 min-h-40 dark:grayscale"
+                                />
+                            </Link>
+                        )
+                    })
+                }
+            </div>
+        </div>
+    )
 }

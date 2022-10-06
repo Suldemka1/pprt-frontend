@@ -1,33 +1,31 @@
 import {PageName} from "../../components/PageName/PageName";
-import parser from 'html-react-parser'
-import {FaChessQueen, FaRegWindowMaximize} from 'react-icons/fa'
-import {VscTypeHierarchySub} from 'react-icons/vsc'
-import {MdArticle} from 'react-icons/md'
-import Head from "next/head";
 import {LeftMenu, MenuItem, MobileMenu, MobileMenuItem} from "../../components/LeftMenu";
-import Link from "next/link";
-import Image from "next/image";
+import {FaChessQueen, FaRegWindowMaximize} from "react-icons/fa";
+import {MdArticle} from "react-icons/md";
+import {VscTypeHierarchySub} from "react-icons/vsc";
+import parser from "html-react-parser";
+import Head from "next/head";
 
 export const getServerSideProps = async () => {
-    const res = await fetch(`${process.env.APIpath}/api/about?populate=*`)
-    const about = await res.json()
+    const res = await fetch(`${process.env.APIpath}/api/anticorruption-page?populate=*`)
+    const content = await res.json()
 
     return {
         props: {
-            about: about.data,
+            content: content.data
         }
     }
 }
 
-export default function About({about}) {
+const Anticorruption = ({content}) => {
     return (
-        <>
+        <div>
             <Head>
-                <title>О государственном органе</title>
+                <title>Антикоррупционная деятельность</title>
             </Head>
 
             <div className="flex xs:flex-col sm:flex-row xs:items-start items-center justify-between py-4">
-                <PageName title={'О государственном органе'}/>
+                <PageName title='Антикоррупционная деятельность'/>
                 <MobileMenu className="md:hidden">
                     <MobileMenuItem url='/management' title='Руководство'/>
                     <MobileMenuItem url='/about/structure' title='Структура'/>
@@ -57,16 +55,12 @@ export default function About({about}) {
                 </LeftMenu>
 
 
-                <div className="xs:w-full md:w-9/12 leading-7 [&>p]:pb-3">
-                    {parser(about.content)}
-                    <Image src={'/location.webp'} loading={"lazy"} alt="some" width={1280} height={960} objectFit='cover' className='dark:grayscale'/>
-
-                    <Link href={`${process.env.APIpath}${about.files.url}`}>
-                        <a>{about.files.name}</a>
-                    </Link>
+                <div className="xs:w-full md:w-9/12">
+                    {parser(content?.content)}
                 </div>
             </div>
+        </div>
+    );
+};
 
-        </>
-    )
-}
+export default Anticorruption;

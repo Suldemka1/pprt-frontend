@@ -1,55 +1,77 @@
-import { observer } from "mobx-react-lite"
-import { PostCard } from "../components/PostInfo/PostInfo"
+import {observer} from "mobx-react-lite"
+import {PostCard} from "../components/PostInfo/PostInfo"
 import Link from "next/link"
 import searchQuery from "../store/search-query"
-import { useEffect } from "react"
+import {useEffect} from "react"
+import searchDocs from "../store/search-docs";
+import Head from "next/head";
 
 const SearchPage = observer(() => {
 
-  useEffect(() => {
-    searchfunction()
-  }, [])
+    useEffect(() => {
+        searchfunction()
+    }, [])
 
-  const searchfunction = async () => {
+    const searchfunction = async () => {
 
-    if (searchQuery.query != 'undefined') {
-      searchQuery.fetchPosts(searchQuery.query)
+        if (searchQuery.query != 'undefined') {
+            searchQuery.fetchPosts(searchQuery.query)
+        } else {
+            searchQuery.fetchPostsAll()
+        }
     }
 
-    else {
-      searchQuery.fetchPostsAll()
-    }
-  }
+    const datamap = searchQuery?.result?.map((item) => {
 
-  const datamap = searchQuery?.result?.map((item) => {
+        console.log(searchQuery.result)
+
+        return (
+            <Link href={`/news/${item.id}`} key={item.id} className={'news'}>
+                <PostCard
+                    id={item.id}
+                    title={item.title}
+                    preview_image={`${process.env.APIpath}` + item.preview_image.url}
+                    news_preview={item.news_preview}
+                    body={item.body}
+                    createdAt={item.createdAt
+                    }
+                />
+            </Link>
+        )
+    })
 
     return (
-      <Link href={`/news/${item.id}`} key={item.id} className={'news'}>
-        <PostCard
-          id={item.id}
-          title={item.title}
-          preview_image={`${process.env.APIpath}` + item.preview_image.url}
-          body={item.body}
-          // tags={item.tags.data}
-          createdAt={item.createdAt}
-        />
-      </Link>
-    )
-  })
+        <div className="min-h-[39vh]">
+            <Head>
+                <title>Поиск</title>
+            </Head>
 
-  return (
-    <>
-      <div className="spl" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        <div>
-          <input defaultValue={searchQuery.query} onChange={(e) => { searchQuery.search(e.target.value) }} className='w-75 my-4' />
-          <button onClick={searchfunction} >Поиск</button>
+            <div className="flex flex-col gap-4 py-5">
+
+                <div className="flex justify-content-between border rounded">
+                    <input defaultValue={searchDocs.query} onChange={(e) => {
+                        searchQuery.search(e.target.value)
+                    }} className='w-full rounded-l px-2 outline-0'/>
+                    <button onClick={searchfunction}
+                            className="w-fit h-fit text-white bg-blue-900 rounded-r px-3 py-2">Поиск
+                    </button>
+                </div>
+
+                <div className="flex flex-col gap-5">
+                    {
+                        searchQuery.result.length < 1
+                            ?
+                            <div>
+                                <p>По вышему запросу ничего не найдено</p>
+                                <p>Попробуйте ввести другой запрос</p>
+                            </div>
+                            :
+                            datamap
+                    }
+                </div>
+            </div>
         </div>
-        <div>
-          {datamap}
-        </div>
-      </div>
-    </>
-  )
+    )
 
 })
 

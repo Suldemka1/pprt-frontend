@@ -1,45 +1,51 @@
-import footer from './footer.module.scss'
 import Link from 'next/link'
-import { AiOutlineMail, AiFillPhone } from 'react-icons/ai'
-import { Container } from 'react-bootstrap'
+import {AiFillPhone, AiOutlineMail} from 'react-icons/ai'
 import Image from 'next/image'
 
 const Footer = (props) =>
-  <footer>
-    <Container>
-      <div className={footer.footer}>
-        <div className={footer.jurinfo}>
-          <div>
-            <div className={footer.minname}>
-              <Link href="/"><a>{props.mincompressedname}</a></Link>
-            </div>
-            <div className={footer.type}>
-              <Link href="/"><a>Официальный интернет-ресурс</a></Link>
-            </div>
-            <div className={footer.contacts}>
-              <div>< AiFillPhone /><p>{props.phone}</p></div>
-              <div>< AiOutlineMail /><p>{props.email}</p></div>
-            </div>
-          </div>
+    <footer className="bg-blue-900 dark:bg-gray-200 p-4 font-light">
+        <div className="container flex flex-col mx-auto gap-4 text-white dark:text-black">
+            <div className="flex flex-wrap justify-between">
 
-          <div className={footer.info}>
-            <div><Link href="/documents/sample.pdf"><a>Использование материалов</a></Link></div>
-            <div><Link href="/documents/personal_data.docx"><a>О персональной информации пользователей</a></Link></div>
-            <div className={footer.social_media}>
-              <Link className={footer.social_media_item} href="https://vk.com/club132363710"><Image alt='some' src="/vk_logo.png" width={30} height={30} className={footer.image}/></Link>
-              <Link className={footer.social_media_item} href="https://t.me/polpredstvotuva"><Image alt='some' src="/tg_logo.png" width={30} height={30} className={footer.image}/></Link>
-              {/* <div className={footer.social_media_item}><Link href="/"><a><Image alt='some' src="/vk_logo.png" width={40} height={40} /></a></Link></div> */}
-            </div>
-          </div>
-        </div>
+                <div className="flex flex-col gap-4">
+                    <Link href="/"><a>{props.mincompressedname}</a></Link>
+                    <Link href="/"><a>Официальный интернет-ресурс</a></Link>
 
-        <hr />
-        <div className={footer.licence}>
-          <p>Все материалы сайта доступны по лицензии: Лицензия на пользование</p>
-          {/* <Image alt='some' src="/informer.png" width={100} height={40} /> */}
+                    <div className="flex flex-col gap-3">
+                        <div className="flex flex-row items-center gap-3">
+                            <AiFillPhone/>{props.phone}
+                        </div>
+                        <div className="flex flex-row items-center gap-3">
+                            <AiOutlineMail/>{props.email}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex flex-col justify-between">
+                    <Link href="/documents/sample.pdf">
+                        <a>Использование материалов</a>
+                    </Link>
+                    <Link href="/documents/personal_data.docx">
+                        <a>О персональной информации пользователей</a>
+                    </Link>
+
+                    <div className="flex gap-4">
+                        <Link className="cursor-pointer" href="https://vk.com/club132363710">
+                            <Image alt='some' src="/vk_logo.png" width={30} height={30} className="cursor-pointer dark:grayscale"/>
+                        </Link>
+                        <Link className="cursor-pointer" href="https://t.me/polpredstvotuva">
+                            <Image alt='some' src="/tg_logo.png" width={30} height={30} className="cursor-pointer dark:grayscale"/>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div className="">
+                <p>Все материалы сайта доступны по лицензии: Лицензия на пользование</p>
+            </div>
         </div>
-      </div>
-    </Container>
-  </footer>
+    </footer>
 
 export default Footer

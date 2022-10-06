@@ -1,16 +1,9 @@
 import React from 'react';
 import Head from 'next/head'
 const Footer = React.lazy(() => import('../components/Footer/Footer'))
-import { Container } from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.scss'
-import '../styles/eye-easy/variables.scss'
-import '../styles/eye-easy/dark-theme.scss'
-import '../styles/eye-easy/light-theme.scss'
-import '../styles/mainpage.scss'
-import '../styles/static_page_layout.scss'
 import Header from '../components/Header/Header';
-import Eyes from '../components/Eyes/Eyes';
+import Index from '../components/Eyes';
 import MainLayout from '../layouts/MainLayout/MainLayout';
 import theme from '../store/theme';
 import { observer } from 'mobx-react-lite';
@@ -26,21 +19,17 @@ const MyApp = observer(({ Component, pageProps }) => {
         <link rel="icon" href="/tuvan_herb.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={true}></link>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet"></link>
       </Head>
 
-      { theme.theme == 'dark' &&  (<Eyes />) }
+      { theme.theme === 'dark' &&  (<Index />) }
 
       <Header
         logosrc={`/tuvan_herb.png`}
-        // compressedName={'ППРТ в г. Москве'}
         fullName={'Полномочное представительство Республики Тыва в г. Москве'} />
 
-      <Container className='body-container'>
-
+      <div className='container mx-auto text-black font-light pb-5'>
         <Component {...pageProps} />
-
-      </Container>
+      </div>
 
       <Footer
         mincompressedname={'Полномочное представительство Республики Тыва в г. Москве'}

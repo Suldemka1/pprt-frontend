@@ -1,9 +1,7 @@
-import press from '../../styles/press.module.scss'
 import { PageName } from "../../components/PageName/PageName";
 import Link from 'next/link'
 import { PostCard } from '../../components/PostInfo/PostInfo';
 import { useRouter } from 'next/router';
-import Pagination from 'react-bootstrap/Pagination';
 
 export const getServerSideProps = async ({ query: { page = 1 } }) => {
 
@@ -29,19 +27,18 @@ function News({ posts, page, pageSize, pageCount, total }) {
   let active = page
   let items = [];
 
+  const paginationBasic = <div className='flex items-center justify-center'>{items}</div>
+
   for (let number = 1; number <= pageCount; number++) {
     items.push(
-      <Pagination.Item key={number} active={number === active}
-        onClick={() => {
-          router.push(`/news/?page=${number}`)
-        }
-        }>
-        {number}
-      </Pagination.Item>,
+        <button key={number} className="bg-blue-900 border rounded px-3 py-2 text-white cursor-pointer"
+                onClick={() => {
+                  router.push(`/news/?page=${number}`)
+                }}>
+          {number}
+        </button>,
     );
   }
-
-  const paginationBasic = <Pagination size="lg">{items}</Pagination>
 
   const datamap = posts.map((item) => {
     return (
@@ -64,7 +61,7 @@ function News({ posts, page, pageSize, pageCount, total }) {
     <>
       <div>
         <PageName title='Новости' />
-        <div className={press.news}>
+        <div className="flex flex-col gap-4">
           {datamap}
           {paginationBasic}
         </div>

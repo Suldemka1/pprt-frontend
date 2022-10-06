@@ -2,12 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+h1 {
+  color: aqua;
+}
+
+h2 {
+  color: bisque;
+}
+
+img {
+  display: var(--image-display) !important;
+  filter: var(--image-grayscale);
+}
+
+.button {
+  display: inline-block;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: rgb(30 58 138);
+  transition-property: background-color, border-color, color, fill, stroke,
+  opacity, box-shadow, transform;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: #ffffff;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.button:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.button-dark {
+  background-color: bisque;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif !important;
+}
 
 :root[font-size='A1'] {
-  --font-size-p: 1rem;
-  --font-size-a: 1rem;
+  --font-size-p: 1.2rem;
+  --font-size-a: 1.5rem;
+  --font-size-li: 1.2rem;
 
   --font-size-h1: var(--font-size-h1-theme1);
   --font-size-h2: var(--font-size-h2-theme1);
@@ -19,7 +67,8 @@
 
 :root[font-size='A2'] {
   --font-size-p: 1.5rem;
-  --font-size-a: 1.5rem;
+  --font-size-a: 2rem;
+  --font-size-li: 1.5rem;
 
   --font-size-h1: 2.75rem;
   --font-size-h2: 2.5rem;
@@ -31,7 +80,8 @@
 
 :root[font-size='A3'] {
   --font-size-p: 2rem;
-  --font-size-a: 2rem;
+  --font-size-a: 2.25rem;
+  --font-size-li: 2rem;
 
   --font-size-h1: 3.25rem;
   --font-size-h2: 3rem;
@@ -39,37 +89,6 @@
   --font-size-h4: 2.5rem;
   --font-size-h5: 2.25rem;
   --font-size-h6: 2rem;
-}
-
-
-@media (max-width: 991px) {
-  .body-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-
-* {
-  padding: 0;
-  margin: 0;
-
-  
-  font-family: Roboto, sans-serif !important;
-}
-
-html,
-body {
-
-  overflow-x: hidden;
-
-  background: var(--background-color);
-
-  // color: var(--font-color)
-}
-
-div {
-  // background-color: var(--background-color) !important;
 }
 
 h1 {
@@ -81,7 +100,6 @@ h1 {
 }
 
 h2 {
-  background-color: var(--background-color);
   font-size: var(--font-size-h2) !important;
   color: var(--font-color) !important;
 }
@@ -92,7 +110,6 @@ h3 {
 }
 
 h4 {
-  background-color: var(--background-color);
   font-size: var(--font-size-h4) !important;
   color: var(--font-color) !important;
 }
@@ -119,74 +136,35 @@ p {
 }
 
 li {
-  font-size: var(--font-size) !important;
+  font-size: var(--font-size-li) !important;
   color: var(--font-color) !important;
 }
-header {
-  
-  a {
-    // font-size: calc(var(--font-size-a) + 2rem) !important;
-    font-size: 1.25rem;
+
+@keyframes left-transition {
+  0% {
+    -ms-scroll-translation: revert;
+    transform: translateX(-100%);
   }
-}
+  10% {
+  }
+  20% {
 
-footer {
-  background-color: var(--background-color-footer);
-  padding: 20px 20px 20px 20px;
-}
-
-
-
-.body-container {
-  margin-bottom: 50px;
-}
-
-button {
-  background: var(--button-background);
-  color: var(--button-font-color);
-}
-
-.button {
-  background: var(--button-background);
-  color: var(--button-font-color);
-
-  max-width: 200px;
-
-  border: 1px solid black;
-  border-radius: 3px;
-  padding: 5px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-img {
-  display: var(--image-display) !important;
-  filter: var(--image-grayscale);
-}
-
-.img_container_md {
-  width: 100%;
-  max-width: 340px !important;
-  min-width: 300px;
-
-  span {
-    position: unset !important;
+  }
+  30% {
+  }
+  40% {
+  }
+  50% {
+  }
+  60% {
+  }
+  70% {
+  }
+  80% {
+  }
+  90% {
+  }
+  100% {
   }
 
-  .image {
-    display: none;
-    background-color: #000000;
-    object-fit: contain;
-    width: auto !important;
-    position: relative !important;
-    height: unset !important;
-  }
-}
-
-.pagination {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }

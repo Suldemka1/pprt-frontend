@@ -1,5 +1,4 @@
 export const PageName = (params, { children }) =>
-  <div className="mb-4 mt-4 my-5" >
-    {children}
-    <h2>{params.title}</h2>
+  <div className="py-10 text-3xl">
+    <h3 className="xs:text-md">{params.title}</h3>
   </div>

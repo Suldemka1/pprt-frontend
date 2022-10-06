@@ -29,12 +29,12 @@ export default function Subordinate(params) {
       </div>
       <div className={subordinate.footer}>
         <div className={subordinate.social_media}>
-          <Image alt="some" src={'/vk_logo.png'} width={40} height={40} className={subordinate.image} />
-          <Image alt="some" src={'/vk_logo.png'} width={40} height={40} className={subordinate.image} />
-          <Image alt="some" src={'/vk_logo.png'} width={40} height={40} className={subordinate.image} />
-          <Image alt="some" src={'/vk_logo.png'} width={40} height={40} className={subordinate.image} />
-          <Image alt="some" src={'/vk_logo.png'} width={40} height={40} className={subordinate.image} />
-          <Image alt="some" src={'/vk_logo.png'} width={40} height={40} className={subordinate.image} />
+          <Image alt="some" src={'/vk_logo.png'} width={40} height={40} className={subordinate.image + "dark:grayscale"} />
+          <Image alt="some" src={'/vk_logo.png'} width={40} height={40} className={subordinate.image + "dark:grayscale"} />
+          <Image alt="some" src={'/vk_logo.png'} width={40} height={40} className={subordinate.image + "dark:grayscale"} />
+          <Image alt="some" src={'/vk_logo.png'} width={40} height={40} className={subordinate.image + "dark:grayscale"} />
+          <Image alt="some" src={'/vk_logo.png'} width={40} height={40} className={subordinate.image + "dark:grayscale"} />
+          <Image alt="some" src={'/vk_logo.png'} width={40} height={40} className={subordinate.image + "dark:grayscale"} />
         </div>
 
         <Button className="button" href={params.webSiteUrl}>Перейти на сайт</Button>

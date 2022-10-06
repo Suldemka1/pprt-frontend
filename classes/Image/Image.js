@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 class ImageGetter {
 
   getImagesList(params) {
@@ -25,11 +27,11 @@ class ImageGetter {
 
     try {
       if (typeof images !== 'undefined') {
-        return <Image alt='some' src={images} layout='fill' className="image" />
+        return <Image alt='some' src={images} layout='fill' className="dark:grayscale" />
       }
 
       else {
-        return <Image alt='some' src={'/fourthree.jpeg'} layout='fill' className="image" />
+        return <Image alt='some' src={'/fourthree.jpeg'} layout='fill' className="dark:grayscale" />
       }
     }
     catch (error) {

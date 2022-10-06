@@ -1,11 +1,9 @@
 const MainLayout = ({children}) => {
 
   return (
-
-    <div className={''}>
+    <div>
       {children}
     </div>
-
   )
 }
 

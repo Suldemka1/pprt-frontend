@@ -1,4 +1,4 @@
-import { PersonCard } from "../../components/Person/Person";
+import { PersonCard } from "../../components/Person/PersonCard";
 import { PageName } from "../../components/PageName/PageName";
 
 export const getServerSideProps = async () => {
@@ -32,7 +32,7 @@ export default function Management({ staff }) {
     <div className="management">
       <PageName title='Руководство полномочного представительства Республики Тыва в г. Москве' />
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'space-between' }}>
+      <div className="flex flex-wrap gap-4 justify-between">
         {show}
       </div>
     </div>

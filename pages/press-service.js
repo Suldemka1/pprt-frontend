@@ -18,16 +18,16 @@ export async function getServerSideProps() {
 
 export default function Press({ press }) {
   return (
-    <>
+    <div className="">
       <Head>
         <title>Пресс служба</title>
       </Head>
       <PageName title='Пресс-служба' />
 
-      <div className='spl-content'>
+      <div className='text-xl'>
         {parser(press.content)}
       </div>
-    </>
+    </div>
 
   )
 }
