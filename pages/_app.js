@@ -27,7 +27,7 @@ const MyApp = observer(({ Component, pageProps }) => {
         logosrc={`/tuvan_herb.png`}
         fullName={'Полномочное представительство Республики Тыва в г. Москве'} />
 
-      <div className='container mx-auto text-black font-light pb-5'>
+      <div className='container mx-auto text-black font-light min-h-[500px]'>
         <Component {...pageProps} />
       </div>
 

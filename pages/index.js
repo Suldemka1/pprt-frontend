@@ -116,7 +116,7 @@ export default function Home({content, news, page, pageSize, pageCount, total, l
                     {
                         links.map((item) =>
                             <Link href={item.url} key={item.id}>
-                                <Image key={item.id} src={process.env.APIpath + item.image.url} width={240}
+                                <Image alt='some' key={item.id} src={process.env.APIpath + item.image.url} width={240}
                                        height={240}/>
                             </Link>
                         )
