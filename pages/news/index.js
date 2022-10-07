@@ -1,7 +1,7 @@
 import { PageName } from "../../components/PageName/PageName";
 import Link from 'next/link'
-import { PostCard } from '../../components/PostInfo/PostInfo';
 import { useRouter } from 'next/router';
+import PostCard from "../../components/Posts/PostCard";
 
 export const getServerSideProps = async ({ query: { page = 1 } }) => {
 

@@ -78,7 +78,6 @@ const Header = observer((props, {children}) => {
                     <MobileMenuItem url='/press-service' title='Пресс-служба'/>
                     <MobileMenuItem url='/contacts' title='Контакты'/>
                 </MobileMenu>
-
             </div>
 
 

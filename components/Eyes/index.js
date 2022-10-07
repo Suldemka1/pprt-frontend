@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { observer } from "mobx-react-lite"
 import theme from "../../store/theme"
 
-const Index = observer(() => {
+const DarkMode = observer(() => {
 
   const handleClick = () => {
     theme.changeTheme()
@@ -34,4 +34,4 @@ const Index = observer(() => {
   )
 })
 
-export default Index
+export default DarkMode

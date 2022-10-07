@@ -26,7 +26,7 @@ export default function About({about}) {
                 <title>О государственном органе</title>
             </Head>
 
-            <div className="flex xs:flex-col sm:flex-row xs:items-start items-center justify-between py-4">
+            <div className="flex xs:flex-col sm:flex-row xs:items-start items-center justify-between">
                 <PageName title={'О государственном органе'}/>
                 <MobileMenu className="md:hidden">
                     <MobileMenuItem url='/management' title='Руководство'/>
@@ -58,12 +58,17 @@ export default function About({about}) {
 
 
                 <div className="xs:w-full md:w-9/12 leading-7 [&>p]:pb-3">
-                    {parser(about.content)}
-                    <Image src={'/location.webp'} loading={"lazy"} alt="some" width={1280} height={960} objectFit='cover' className='dark:grayscale'/>
 
-                    <Link href={`${process.env.APIpath}${about.files.url}`}>
-                        <a>{about.files.name}</a>
-                    </Link>
+                    {parser(about.content)}
+
+                    <div className="py-6">
+                        <Link href={`${process.env.APIpath}${about.files.url}`}>
+                            {about.files.name}
+                        </Link>
+                    </div>
+
+
+                    <Image src={'/location.webp'} loading={"lazy"} alt="some" width={1280} height={960} objectFit='cover' className='dark:grayscale'/>
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { PostPage } from "../../components/PostInfo/PostInfo";
+import { PostPage } from "../../components/Posts/PostPage";
 
 export const getServerSideProps = async (context) => {
   const { id } = context.params
@@ -19,8 +19,8 @@ const NewsItem = ({ post }) => (
     <PostPage
       id={post.id}
       title={post.title}
-      preview_image={`${process.env.APIpath}` + post.preview_image}
-      upload_urls={post.images}
+      preview_image={post.preview_image}
+      images={post.images}
       body={post.body}
       tags={post.tags.data}
     />

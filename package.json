@@ -15,6 +15,7 @@
     "embla-carousel-autoplay": "^7.0.3",
     "embla-carousel-react": "^7.0.3",
     "express": "^4.18.1",
+    "gsap": "^3.11.3",
     "html-react-parser": "^3.0.1",
     "install": "^0.13.0",
     "mobx": "^6.6.1",
@@ -25,7 +26,9 @@
     "qs": "^6.11.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-easy-swipe": "^0.0.22",
     "react-icons": "^4.4.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-simple-image-viewer": "^1.2.2",
     "sass": "^1.53.0",
     "sharp": "^0.31.0"

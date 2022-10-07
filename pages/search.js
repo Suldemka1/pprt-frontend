@@ -1,5 +1,5 @@
 import {observer} from "mobx-react-lite"
-import {PostCard} from "../components/PostInfo/PostInfo"
+import PostCard from "../components/Posts/PostCard"
 import Link from "next/link"
 import searchQuery from "../store/search-query"
 import {useEffect} from "react"
@@ -14,16 +14,14 @@ const SearchPage = observer(() => {
 
     const searchfunction = async () => {
 
-        if (searchQuery.query != 'undefined') {
-            searchQuery.fetchPosts(searchQuery.query)
+        if (searchQuery.query !== 'undefined') {
+            await searchQuery.fetchPosts(searchQuery.query)
         } else {
-            searchQuery.fetchPostsAll()
+            await searchQuery.fetchPostsAll()
         }
     }
 
     const datamap = searchQuery?.result?.map((item) => {
-
-        console.log(searchQuery.result)
 
         return (
             <Link href={`/news/${item.id}`} key={item.id} className={'news'}>
@@ -49,9 +47,11 @@ const SearchPage = observer(() => {
             <div className="flex flex-col gap-4 py-5">
 
                 <div className="flex justify-content-between border rounded">
-                    <input defaultValue={searchDocs.query} onChange={(e) => {
-                        searchQuery.search(e.target.value)
-                    }} className='w-full rounded-l px-2 outline-0'/>
+                    <input defaultValue={searchDocs.query}
+                           onChange={(e) => {
+                               searchQuery.search(e.target.value)
+                           }}
+                           className='w-full rounded-l px-2 outline-0'/>
                     <button onClick={searchfunction}
                             className="w-fit h-fit text-white bg-blue-900 rounded-r px-3 py-2">Поиск
                     </button>
@@ -62,7 +62,7 @@ const SearchPage = observer(() => {
                         searchQuery.result.length < 1
                             ?
                             <div>
-                                <p>По вышему запросу ничего не найдено</p>
+                                <p>По вашему запросу ничего не найдено</p>
                                 <p>Попробуйте ввести другой запрос</p>
                             </div>
                             :
@@ -72,7 +72,6 @@ const SearchPage = observer(() => {
             </div>
         </div>
     )
-
 })
 
 export default SearchPage

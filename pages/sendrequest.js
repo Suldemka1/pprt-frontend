@@ -35,7 +35,6 @@ export default function SendRequest() {
                 headers: {"Content-Type": "multipart/form-data"},
             })
                 .then((res) => {
-                    console.log('Успешно')
                     setSurname('')
                     setName('')
                     setPatronymic('')
@@ -115,22 +114,23 @@ export default function SendRequest() {
             <form className="w-fit py-3">
                 <div className="flex flex-col gap-3">
                     <input value={surname} onChange={(e) => setSurname(e.target.value)} placeholder="Фамилия"
-                           maxLength={30}
+                           maxLength={30} required
                            className="border border-black rounded py-2 px-3"/>
                     <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Имя"
-                           maxLength={30}
+                           maxLength={30} required
                            className="border border-black rounded py-2 px-3"/>
                     <input value={patronymic} onChange={(e) => setPatronymic(e.target.value)} placeholder="Отчество"
                            maxLength={30}
                            className="border border-black rounded py-2 px-3"/>
                     <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Номер телефона"
-                           maxLength={12}
+                           maxLength={12} required
                            className="border border-black rounded py-2 px-3"/>
                     <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Адрес электронной почты"
-                           maxLength={30}
+                           maxLength={30} required
                            className="border border-black rounded py-2 px-3"/>
                     <textarea value={body} onChange={e => setBody(e.target.value)} rows={7}
                               placeholder="Введите ваше сообщение"
+                              required
                               maxLength={1500}
                               className="w-full border border-black rounded py-3 px-3 resize-none"/>
                     <p>

@@ -7,7 +7,6 @@ import {useEffect} from "react";
 export const getServerSideProps = async () => {
     const res = await fetch(`${process.env.APIpath}/api/document-types`)
     const types = await res.json()
-    console.log(types)
 
     return {
         props: {
@@ -37,7 +36,6 @@ const Docs = observer(({types}) => {
 
         //функция которая рисует нам документы
         const datamap = searchDocs?.result?.map((item) => {
-
             return (
                 <DocumentCard
                     key={item.id}

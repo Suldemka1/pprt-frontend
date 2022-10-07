@@ -3,10 +3,10 @@ import Head from 'next/head'
 const Footer = React.lazy(() => import('../components/Footer/Footer'))
 import '../styles/globals.scss'
 import Header from '../components/Header/Header';
-import Index from '../components/Eyes';
 import MainLayout from '../layouts/MainLayout/MainLayout';
 import theme from '../store/theme';
 import { observer } from 'mobx-react-lite';
+import DarkMode from "../components/Eyes";
 
 const MyApp = observer(({ Component, pageProps }) => {
   
@@ -21,7 +21,7 @@ const MyApp = observer(({ Component, pageProps }) => {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={true}></link>
       </Head>
 
-      { theme.theme === 'dark' &&  (<Index />) }
+      { theme.theme === 'dark' &&  (<DarkMode />) }
 
       <Header
         logosrc={`/tuvan_herb.png`}

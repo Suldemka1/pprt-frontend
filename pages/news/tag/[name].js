@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { PageName } from "../../../components/PageName/PageName";
-import { PostCard } from "../../../components/PostInfo/PostInfo";
+import { PostCard } from "../../../components/Posts/PostPage";
 
 export const getServerSideProps = async (context) => {
   const { name } = context.params

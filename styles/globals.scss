@@ -2,16 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-  color: aqua;
-}
-
-h2 {
-  color: bisque;
-}
-
 img {
-  display: var(--image-display) !important;
+  display: var(--image-display);
   filter: var(--image-grayscale);
 }
 
@@ -138,33 +130,4 @@ p {
 li {
   font-size: var(--font-size-li) !important;
   color: var(--font-color) !important;
-}
-
-@keyframes left-transition {
-  0% {
-    -ms-scroll-translation: revert;
-    transform: translateX(-100%);
-  }
-  10% {
-  }
-  20% {
-
-  }
-  30% {
-  }
-  40% {
-  }
-  50% {
-  }
-  60% {
-  }
-  70% {
-  }
-  80% {
-  }
-  90% {
-  }
-  100% {
-  }
-
 }

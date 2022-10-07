@@ -18,7 +18,7 @@ export const getServerSideProps = async () => {
 
 export default function Activity({content}) {
     return (
-        <div className="py-5">
+        <div className="">
             <Head>
                 <title>Деятельность</title>
             </Head>
