@@ -29,7 +29,7 @@ export default function SendRequest() {
             await formData.append('data', JSON.stringify(data))
 
             for (let i = 0; i < files.length; i++) {
-                await formData.append('files.files', files[i], files.name)
+                await formData.append('files.files', files[i], files[i].name)
             }
             await axios.post(`${process.env.APIpath}/api/appeals`, formData, {
                 headers: {"Content-Type": "multipart/form-data"},

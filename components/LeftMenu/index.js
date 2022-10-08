@@ -69,7 +69,6 @@ const MobileMenu = ({children, className}) => {
                         display: none;
                       }
                       .showMenuNav {
-                        display: block;
                         position: fixed;
                         width: 100%;
                         height: 100vh;

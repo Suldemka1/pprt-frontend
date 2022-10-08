@@ -30,7 +30,7 @@ export const PersonPage = (params) => {
             <PageName title={params.position}/>
 
             <div className="border border-black rounded-md">
-                <div className="flex flex-row gap-5">
+                <div className="flex xs:flex-col md:flex-row gap-5">
 
                     <div className="min-w-fit max-w-full">
                         <Image alt='some' src={`${process.env.APIpath}` + params.preview_image} width={400} height={400}
@@ -73,7 +73,7 @@ export const PersonPage = (params) => {
                         src={item}
                         width={350}
                         height={233}
-                        objectFit='cover'
+                        objectFit='contain'
                         key={index}
                         onClick={() => openImageViewer(index)}
                         className="dark:grayscale"/>

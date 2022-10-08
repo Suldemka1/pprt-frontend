@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import PostCard from "../../components/Posts/PostCard";
 
 export const getServerSideProps = async ({ query: { page = 1 } }) => {
-
   const res = await fetch(`${process.env.APIpath}/api/posts?pagination[page]=${page}&pagination[pageSize]=10&sort=createdAt:desc&populate=*`);
   const data = await res.json()
 
