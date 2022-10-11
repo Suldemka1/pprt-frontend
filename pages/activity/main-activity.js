@@ -4,6 +4,7 @@ import Head from 'next/head'
 import {LeftMenu, MenuItem, MobileMenu, MobileMenuItem} from "../../components/LeftMenu";
 import {FaChessQueen} from "react-icons/fa";
 import {VscTypeHierarchySub} from "react-icons/vsc";
+import React from "react";
 
 export const getServerSideProps = async () => {
     const res = await fetch(`${process.env.APIpath}/api/main-activity-page?populate=*`)
@@ -29,6 +30,7 @@ const MainActivity = ({content}) =>
                 <MobileMenuItem title={'Нормотворческая деятельность государственного органа'}
                                 url={'/projects'}/>
                 <MobileMenuItem title={'Функции государственного органа'} url={'/activity/functions'}/>
+                <MobileMenuItem title={'Перечень законов и иных нормативно-правовых актов, определяющих полномочия, задачи, функции государственного органа'} url={'/activity/npa'}/>
             </MobileMenu>
         </div>
 
@@ -40,6 +42,8 @@ const MainActivity = ({content}) =>
                           icon_function={VscTypeHierarchySub()}/>
                 <MenuItem title={'Функции государственного органа'} url={'/activity/functions'}
                           icon_function={VscTypeHierarchySub()}/>
+                <MenuItem title={'Перечень законов и иных нормативно-правовых актов, определяющих полномочия, задачи, функции государственного органа'}
+                          url={'/activity/npa'} />
             </LeftMenu>
 
             <div className='xs:full md:w-9/12 leading-7 [&>p]:pb-3'>

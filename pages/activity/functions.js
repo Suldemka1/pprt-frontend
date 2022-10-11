@@ -5,6 +5,7 @@ import Head from "next/head";
 import {LeftMenu, MenuItem, MobileMenu, MobileMenuItem} from "../../components/LeftMenu";
 import {BsFillArrowDownCircleFill} from "react-icons/bs";
 import {GrDocumentText} from "react-icons/gr";
+import React from "react";
 
 const Functions = () => {
     return (
@@ -19,6 +20,7 @@ const Functions = () => {
                     <MobileMenuItem title={'Нормотворческая деятельность государственного органа'}
                                     url={'/projects'}/>
                     <MobileMenuItem title={'Функции государственного органа'} url={'/activity/functions'}/>
+                    <MobileMenuItem title={'Перечень законов и иных нормативно-правовых актов, определяющих полномочия, задачи, функции государственного органа'} url={'/activity/npa'}/>
                 </MobileMenu>
             </div>
 
@@ -31,6 +33,9 @@ const Functions = () => {
                               icon_function={VscTypeHierarchySub()}/>
                     <MenuItem title={'Функции государственного органа'} url={'/activity/functions'}
                               icon_function={VscTypeHierarchySub()}/>
+                    <MenuItem
+                        title={'Перечень законов и иных нормативно-правовых актов, определяющих полномочия, задачи, функции государственного органа'}
+                        url={'/activity/npa'}/>
                 </LeftMenu>
 
                 <div className="flex flex-col gap-5 md:w-9/12">

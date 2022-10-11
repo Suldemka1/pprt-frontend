@@ -7,8 +7,8 @@ import {VscTypeHierarchySub} from "react-icons/vsc";
 import parser from "html-react-parser";
 import {GrDocumentText} from "react-icons/gr";
 
-export const getStaticProps = async () => {
-    const res = await fetch(`${process.env.APIpath}/api/list-of-npas?populate=*`)
+export const getServerSideProps = async () => {
+    const res = await fetch(`${process.env.APIpath}/api/list-of-npa?populate=*`)
     const data = await res.json()
 
     return {
@@ -16,7 +16,7 @@ export const getStaticProps = async () => {
     }
 }
 
-const Npa = ({content}) => {
+const Npa = (props) => {
     return (
         <>
             <Head>
@@ -30,6 +30,7 @@ const Npa = ({content}) => {
                     <MobileMenuItem title={'Нормотворческая деятельность государственного органа'}
                                     url={'/projects'}/>
                     <MobileMenuItem title={'Функции государственного органа'} url={'/activity/functions'}/>
+                    <MobileMenuItem title={'Перечень законов и иных нормативно-правовых актов, определяющих полномочия, задачи, функции государственного органа'} url={'/activity/npa'}/>
                 </MobileMenu>
             </div>
 
@@ -41,10 +42,12 @@ const Npa = ({content}) => {
                               icon_function={VscTypeHierarchySub()}/>
                     <MenuItem title={'Функции государственного органа'} url={'/activity/functions'}
                               icon_function={VscTypeHierarchySub()}/>
+                    <MenuItem title={'Перечень законов и иных нормативно-правовых актов, определяющих полномочия, задачи, функции государственного органа'}
+                              url={'/activity/npa'} />
                 </LeftMenu>
 
                 <div>
-                    {parser(content)}
+                    {parser(props.content)}
                 </div>
 
                 {/* <div className='flex flex-col gap-5 xs:full md:w-9/12 leading-7 [&>p]:pb-3'>
