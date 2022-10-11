@@ -7,7 +7,16 @@ import {VscTypeHierarchySub} from "react-icons/vsc";
 import parser from "html-react-parser";
 import {GrDocumentText} from "react-icons/gr";
 
-const Npa = () => {
+export const getStaticProps = async () => {
+    const res = await fetch(`${process.env.APIpath}/api/list-of-npas?populate=*`)
+    const data = await res.json()
+
+    return {
+        props: data.data
+    }
+}
+
+const Npa = ({content}) => {
     return (
         <>
             <Head>
@@ -34,7 +43,11 @@ const Npa = () => {
                               icon_function={VscTypeHierarchySub()}/>
                 </LeftMenu>
 
-                <div className='flex flex-col gap-5 xs:full md:w-9/12 leading-7 [&>p]:pb-3'>
+                <div>
+                    {parser(content)}
+                </div>
+
+                {/* <div className='flex flex-col gap-5 xs:full md:w-9/12 leading-7 [&>p]:pb-3'>
                     <button
                         className=" flex items-center gap-3 text-left cursor-pointer text-xl hover:text-blue-900">
                         <div>
@@ -63,7 +76,7 @@ const Npa = () => {
                         Республики Тыва в государственных программах Российской Федерации, федеральных целевых
                         программах и федеральной адресной инвестиционной программе».
                     </button>
-                </div>
+                </div> */}
             </div>
         </>
     )
