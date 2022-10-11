@@ -14,10 +14,11 @@ export const getServerSideProps = async () => {
 export default function Projects({ projects }) {
   return (
     <>
-      <PageName title='Проекты' />
+      <PageName title='Нормотворческая деятельность государственного органа' />
       <div>
 
-        {
+          {projects.length >= 1
+              ?
           projects.map(item => {
 
             return (
@@ -33,7 +34,9 @@ export default function Projects({ projects }) {
               />
             )
 
-          })
+          }) :
+              <p>В настоящий момент Полномочным представительством Республики Тыва в г. Москве каких-
+                  либо проектов нормативно-правовых актов внесено не было.</p>
         }
 
       </div>

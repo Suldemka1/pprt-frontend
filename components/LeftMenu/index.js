@@ -5,21 +5,25 @@ import {useRouter} from "next/router";
 const MenuItem = (params) => {
     const router = useRouter()
     return (
-        <li className="sm:hidden md:flex lg:flex xl:flex flex flex-row items-center gap-2 text-xl" onClick={() => router.push(params.url)}>
+        <li className="sm:hidden md:flex lg:flex xl:flex flex flex-row items-center gap-2 text-xl"
+            onClick={() => router.push(params.url)}>
             <div className="w-5 h-5">{params.icon_function}</div>
-                <p className="hover:text-white hover:scale-105 cursor-pointer">
-                    {params.title}
-                </p>
+            <p className="hover:text-white hover:scale-105 cursor-pointer">
+                {params.title}
+            </p>
         </li>
     )
 }
 
 
+const MobileMenuItem = (params) => {
 
-
-const MobileMenuItem = (params) => <li>
-    <Link href={params.url}><a>{params.title}</a></Link>
-</li>
+    return (
+        <li>
+            <Link href={params.url}><a>{params.title}</a></Link>
+        </li>
+    )
+}
 
 
 const MobileMenu = ({children, className}) => {

@@ -15,7 +15,7 @@ const Functions = () => {
             <div className="flex items-center justify-between">
                 <PageName title='Функции Полномочного представительства'/>
                 <MobileMenu className="md:hidden">
-                    <MobileMenuItem title={'Направления работы'} url={'/activity/main-activity'}/>
+                    <MobileMenuItem title={'Основные задачи'} url={'/activity/main-activity'}/>
                     <MobileMenuItem title={'Нормотворческая деятельность государственного органа'}
                                     url={'/projects'}/>
                     <MobileMenuItem title={'Функции государственного органа'} url={'/activity/functions'}/>
@@ -25,7 +25,7 @@ const Functions = () => {
             <div className='flex xs:flex-col md:flex-row gap-5 w-full py-3'>
 
                 <LeftMenu>
-                    <MenuItem title={'Направления работы'} url={'/activity/main-activity'}
+                    <MenuItem title={'Основные задачи'} url={'/activity/main-activity'}
                               icon_function={FaChessQueen()}/>
                     <MenuItem title={'Нормотворческая деятельность государственного органа'} url={'/projects'}
                               icon_function={VscTypeHierarchySub()}/>

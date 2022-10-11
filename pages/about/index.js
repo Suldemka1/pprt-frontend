@@ -7,6 +7,8 @@ import Head from "next/head";
 import {LeftMenu, MenuItem, MobileMenu, MobileMenuItem} from "../../components/LeftMenu";
 import Link from "next/link";
 import Image from "next/image";
+import {GrDocumentPdf} from "react-icons/gr";
+import {useRouter} from "next/router";
 
 export const getServerSideProps = async () => {
     const res = await fetch(`${process.env.APIpath}/api/about?populate=*`)
@@ -20,6 +22,7 @@ export const getServerSideProps = async () => {
 }
 
 export default function About({about}) {
+    const router = useRouter()
     return (
         <>
             <Head>
@@ -61,14 +64,20 @@ export default function About({about}) {
 
                     {parser(about.content)}
 
-                    <div className="py-6">
-                        <Link href={`${process.env.APIpath}${about.files.url}`}>
+                    <div className="flex flex-row items-center justify-start gap-3 text-lg py-6"
+                         onClick={() => router.push(`${process.env.APIpath}${about.files.url}`)}>
+                        <div className="w-10 h-10 cursor-pointer">
+                            <GrDocumentPdf className="w-full h-full"/>
+                        </div>
+
+                        <div className="hover:text-blue-900 cursor-pointer">
                             {about.files.name}
-                        </Link>
+                        </div>
                     </div>
 
 
-                    <Image src={'/location.webp'} loading={"lazy"} alt="some" width={1280} height={960} objectFit='cover' className='dark:grayscale'/>
+                    <Image src={'/location.webp'} loading={"lazy"} alt="some" width={1280} height={960}
+                           objectFit='cover' className='dark:grayscale'/>
                 </div>
             </div>
 

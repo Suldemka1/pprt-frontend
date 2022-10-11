@@ -11,14 +11,12 @@ class Theme {
   setTheme() {
     this.theme === 'light' ? 'dark' : 'light'
     document.documentElement.setAttribute('data-theme', this.theme)
-    console.log(this.theme)
   }
 
   changeTheme() {
-    if (this.theme == 'light') {
+    if (this.theme === 'light') {
       this.theme = 'dark'
       document.documentElement.setAttribute('data-theme', this.theme)
-      console.log(this.theme)
     }
     else {
       this.theme = 'light'
