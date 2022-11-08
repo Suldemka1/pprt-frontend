@@ -1,6 +1,7 @@
 import parser from 'html-react-parser'
 import Head from 'next/head'
 import {PageName} from "../components/PageName/PageName";
+import MainPageLayout from '../layouts/MainPageLayout';
 
 export async function getServerSideProps() {
   const res = await fetch(`${process.env.APIpath}/api/contact`)
@@ -15,7 +16,7 @@ export async function getServerSideProps() {
 
 export default function Contacts({ contact }) {
   return (
-    <>
+    <MainPageLayout>
       <Head>
         <title>Контакты</title>
       </Head>
@@ -34,6 +35,6 @@ export default function Contacts({ contact }) {
           </div>
 
       </div>
-    </>
+    </MainPageLayout>
   )
 }

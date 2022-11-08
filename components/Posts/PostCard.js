@@ -18,13 +18,13 @@ const PostCard = (params) => {
 
                 <div className="flex flex-col justify-between gap-3 p-3">
                     <div className="">
-                        <h4 className="font-bold">{params.title}</h4>
+                        <h4 className="font-semibold">{params.title}</h4>
                     </div>
                     <p>{params.news_preview}</p>
 
                     <div className="flex flex-row items-center justify-between">
 
-                        <div className="flex gap-2">
+                        <div className="flex items-center gap-2">
                             <p className="font-bold">Дата публикации:</p>
                             {unixTimeConverter(params.createdAt)}
                         </div>

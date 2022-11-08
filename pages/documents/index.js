@@ -3,6 +3,7 @@ import {DocumentCard} from "../../components/Document/Document";
 import {observer} from "mobx-react-lite";
 import searchDocs from "../../store/search-docs";
 import {useEffect} from "react";
+import MainPageLayout from "../../layouts/MainPageLayout";
 
 export const getServerSideProps = async () => {
     const res = await fetch(`${process.env.APIpath}/api/document-types`)
@@ -49,7 +50,7 @@ const Docs = observer(({types}) => {
         })
 
         return (
-            <>
+            <MainPageLayout>
                 <PageName title='Банк документов'/>
 
                 <div className="flex xs:flex-col gap-5">
@@ -90,7 +91,7 @@ const Docs = observer(({types}) => {
                     </div>
                 </div>
 
-            </>
+            </MainPageLayout>
         );
     }
 )

@@ -31,7 +31,7 @@ class ImageGetter {
       }
 
       else {
-        return <Image alt='some' src={'/fourthree.jpeg'} layout='fill' className="dark:grayscale" />
+        return <Image alt='some' src='/fourthree.jpeg' layout='fill' className="dark:grayscale" />
       }
     }
     catch (error) {

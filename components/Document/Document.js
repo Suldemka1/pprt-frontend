@@ -5,7 +5,7 @@ export const DocumentCard = (params) => (
 
     <div className="flex flex-col gap-1 border rounded text-md w-100">
 
-        <div className="bg-blue-900 dark:bg-gray-400 p-3 rounded-t text-lg text-white dark:text-black">
+        <div className="bg-blue-900 dark:bg-gray-400 p-3 rounded-t text-white dark:text-black">
             <h5>{params.name}</h5>
         </div>
 

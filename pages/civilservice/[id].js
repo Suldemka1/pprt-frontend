@@ -1,5 +1,6 @@
 import { PageName } from "../../components/PageName/PageName"
 import Head from "next/head"
+import CivilservicePageLayout from '../../layouts/CivilservicePageLayout'
 
 export const getServerSideProps = async (context) => {
   const { id } = context.params
@@ -13,14 +14,14 @@ export const getServerSideProps = async (context) => {
 
 
 const VacancyItem = () => {
-  <>
+  <CivilservicePageLayout>
     <Head>
       <title>{vacancy.title}</title>
     </Head>
     <div>
       <PageName title={vacancy.title} />
     </div>
-  </>
+  </CivilservicePageLayout>
 
 }
 

@@ -3,6 +3,7 @@ import { PageName } from "../components/PageName/PageName";
 import Link from "next/link";
 import Head from 'next/head'
 import axios from 'axios'
+import MainPageLayout from "../layouts/MainPageLayout";
 
 export default function SendRequest() {
     const [surname, setSurname] = useState('')
@@ -54,7 +55,7 @@ export default function SendRequest() {
     };
 
     return (
-        <>
+        <MainPageLayout>
             <Head>
                 <title>Прием обращений</title>
             </Head>
@@ -230,6 +231,6 @@ export default function SendRequest() {
                     }
                 `}
             </style>
-        </>
+        </MainPageLayout>
     )
 }

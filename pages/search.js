@@ -5,6 +5,7 @@ import searchQuery from "../store/search-query"
 import { useEffect } from "react"
 import searchDocs from "../store/search-docs";
 import Head from "next/head";
+import MainPageLayout from "../layouts/MainPageLayout"
 
 const SearchPage = observer(() => {
 
@@ -24,7 +25,7 @@ const SearchPage = observer(() => {
     const datamap = searchQuery?.result?.map((item) => {
 
         return (
-            <Link href={`/news/${item.id}`} key={item.id} className={'news'}>
+            <Link href={`/news/${item.id}`} key={item.id} className='news'>
                 <a>
                     <PostCard
                         id={item.id}
@@ -41,7 +42,7 @@ const SearchPage = observer(() => {
     })
 
     return (
-        <div className="min-h-[39vh]">
+        <MainPageLayout>
             <Head>
                 <title>Поиск</title>
             </Head>
@@ -72,7 +73,7 @@ const SearchPage = observer(() => {
                     }
                 </div>
             </div>
-        </div>
+        </MainPageLayout>
     )
 })
 

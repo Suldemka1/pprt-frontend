@@ -8,15 +8,15 @@ const Footer = (props) =>
             <div className="flex flex-wrap justify-between">
 
                 <div className="flex flex-col gap-4">
-                    <Link href="/"><a>{props.mincompressedname}</a></Link>
+                    <Link href="/"><a>Полномочное представительство Республики Тыва в г. Москве</a></Link>
                     <Link href="/"><a>Официальный интернет-ресурс</a></Link>
 
                     <div className="flex flex-col gap-3">
                         <div className="flex flex-row items-center gap-3">
-                            <AiFillPhone/>{props.phone}
+                            <AiFillPhone/>+7(499)236-48-01
                         </div>
                         <div className="flex flex-row items-center gap-3">
-                            <AiOutlineMail/>{props.email}
+                            <AiOutlineMail/>info@pprt17.ru
                         </div>
                     </div>
                 </div>

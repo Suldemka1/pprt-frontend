@@ -1,7 +1,7 @@
 import parser from "html-react-parser";
-import {BsFillArrowDownCircleFill} from "react-icons/bs";
+import { BsFillArrowDownCircleFill } from "react-icons/bs";
 
-export const VacancyCard = (params) =>
+const VacancyCard = (params) =>
     <div className={"border rounded p-3"}>
 
         <div className="flex items-center h-20 text-2xl">
@@ -11,7 +11,7 @@ export const VacancyCard = (params) =>
         <details className="">
             <summary className="flex items-center gap-3 text-xl
             cursor-pointer list-none">
-                <BsFillArrowDownCircleFill className="animate-bounce"/>
+                <BsFillArrowDownCircleFill className="animate-bounce" />
                 Описание вакансии
             </summary>
             <div>
@@ -20,3 +20,5 @@ export const VacancyCard = (params) =>
         </details>
 
     </div>
+
+export default VacancyCard

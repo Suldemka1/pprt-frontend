@@ -5,7 +5,8 @@ import searchQuery from '../../store/search-query'
 import {observer} from 'mobx-react-lite'
 import {FaRegEye, FaSearch} from 'react-icons/fa'
 import theme from '../../store/theme'
-import {MobileMenu, MobileMenuItem} from "../LeftMenu";
+import MobileMenu from '../MobileMenu'
+import MobileMenuItem from '../MobileMenu/MobileMenuItem'
 
 const Header = observer((props, {children}) => {
 
@@ -33,11 +34,11 @@ const Header = observer((props, {children}) => {
                 <div className="flex flex-row justify-center items-center p-1 bg-white cursor-pointer">
 
                     <input type="text"
-                           placeholder={'Поиск'}
+                           placeholder='Поиск'
                            onChange={(e) => searchQuery.search(e.target.value)}
                            className="text-sm text-black outline-0"/>
 
-                    <Link href={'/search'}>
+                    <Link href='/search'>
                         <a>
                             <FaSearch
                             onClick={(e) => {
@@ -53,9 +54,9 @@ const Header = observer((props, {children}) => {
             <div className="bg-white py-4">
                 <div className="container mx-auto flex items-center justify-between text-black">
                     <div className="flex items-center text-2xl font-light gap-3">
-                        <Image alt='some' src={props.logosrc} width={100} height={100} className="dark:grayscale"/>
-                        <div className=''>
-                            <h4>{props.fullName}</h4>
+                        <Image alt='some' src="/tuvan_herb.png" width={100} height={100} className="dark:grayscale"/>
+                        <div>
+                            <h3>Полномочное представительство Республики Тыва в г. Москве</h3>
                         </div>
                     </div>
 
@@ -69,19 +70,6 @@ const Header = observer((props, {children}) => {
                     </div>
                 </div>
             </div>
-
-            <div className="container mx-auto md:hidden py-3">
-                <MobileMenu className="text-black">
-                    <MobileMenuItem url='/' title='Главная'/>
-                    <MobileMenuItem url='/documents' title='Документы'/>
-                    <MobileMenuItem url='/sendrequest' title='Прием обращений'/>
-                    <MobileMenuItem url='/about' title='О государственном органе'/>
-                    <MobileMenuItem url='/activity' title='Деятельность'/>
-                    <MobileMenuItem url='/press-service' title='Пресс-служба'/>
-                    <MobileMenuItem url='/contacts' title='Контакты'/>
-                </MobileMenu>
-            </div>
-
 
             <div className="xs:hidden md:block bg-gray-100 py-3 text-black text-xl font-light">
                 <div className="container mx-auto flex flex-row justify-between">

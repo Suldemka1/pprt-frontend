@@ -6,6 +6,6 @@ export default function imagePreview(upload_urls) {
   }
 
   else {
-    return <Image alt='some' src={'/news_1.jpg'} width={600} height={400} objectFit="cover" className="dark:grayscale"/>
+    return <Image alt='some' src='/news_1.jpg' width={600} height={400} objectFit="cover" className="dark:grayscale"/>
   }
 }

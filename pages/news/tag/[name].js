@@ -26,7 +26,7 @@ function News({ name, posts }) {
 
   const datamap = posts.map((item) => {
     return (
-      <Link href={`/news/${item.id}`} key={item.id} className={'news'}>
+      <Link href={`/news/${item.id}`} key={item.id} className='news'>
         <a>
           <PostCard
           id={item.id}

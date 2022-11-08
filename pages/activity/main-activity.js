@@ -26,24 +26,24 @@ const MainActivity = ({content}) =>
         <div className="flex items-center justify-between">
             <PageName title='Основные задачи'/>
             <MobileMenu className="md:hidden">
-                <MobileMenuItem title={'Основные задачи'} url={'/activity/main-activity'}/>
-                <MobileMenuItem title={'Нормотворческая деятельность государственного органа'}
-                                url={'/projects'}/>
-                <MobileMenuItem title={'Функции государственного органа'} url={'/activity/functions'}/>
-                <MobileMenuItem title={'Перечень законов и иных нормативно-правовых актов, определяющих полномочия, задачи, функции государственного органа'} url={'/activity/npa'}/>
+                <MobileMenuItem title='Основные задачи' url='/activity/main-activity'/>
+                <MobileMenuItem title='Нормотворческая деятельность государственного органа'
+                                url='/projects'/>
+                <MobileMenuItem title='Функции государственного органа' url='/activity/functions'/>
+                <MobileMenuItem title='Перечень законов и иных нормативно-правовых актов, определяющих полномочия, задачи, функции государственного органа' url='/activity/npa'/>
             </MobileMenu>
         </div>
 
         <div className='flex xs:flex-col md:flex-row gap-5 w-full py-3'>
             <LeftMenu>
-                <MenuItem title={'Основные задачи'} url={'/activity/main-activity'}
+                <MenuItem title='Основные задачи' url='/activity/main-activity'
                           icon_function={FaChessQueen()}/>
-                <MenuItem title={'Нормотворческая деятельность государственного органа'} url={'/projects'}
+                <MenuItem title='Нормотворческая деятельность государственного органа' url='/projects'
                           icon_function={VscTypeHierarchySub()}/>
-                <MenuItem title={'Функции государственного органа'} url={'/activity/functions'}
+                <MenuItem title='Функции государственного органа' url='/activity/functions'
                           icon_function={VscTypeHierarchySub()}/>
-                <MenuItem title={'Перечень законов и иных нормативно-правовых актов, определяющих полномочия, задачи, функции государственного органа'}
-                          url={'/activity/npa'} />
+                <MenuItem title='Перечень законов и иных нормативно-правовых актов, определяющих полномочия, задачи, функции государственного органа'
+                          url='/activity/npa' />
             </LeftMenu>
 
             <div className='xs:full md:w-9/12 leading-7 [&>p]:pb-3'>

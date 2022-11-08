@@ -3,6 +3,7 @@ import parser from 'html-react-parser'
 import Head from 'next/head'
 import {useState} from "react";
 import suggested_news from "../store/suggested-news";
+import MainPageLayout from '../layouts/MainPageLayout';
 
 export async function getServerSideProps() {
     const res = await fetch(`${process.env.APIpath}/api/press-service`)
@@ -23,7 +24,7 @@ export default function Press({press}) {
     }
 
     return (
-        <div className="">
+        <MainPageLayout>
             <Head>
                 <title>Пресс служба</title>
             </Head>
@@ -48,7 +49,7 @@ export default function Press({press}) {
                                     <h1 className="">Предложить новость</h1>
                                 </div>
 
-                                <input type={'text'} placeholder="Заголовок новости" className="border-2 p-2"
+                                <input type='text' placeholder="Заголовок новости" className="border-2 p-2"
                                        onChange={(e) => {
                                            suggested_news.setTitle(e.target.value)
                                        }}/>
@@ -62,13 +63,13 @@ export default function Press({press}) {
                                     <label htmlFor="files"
                                            className="bg-blue-900 text-white border rounded py-2 px-3 cursor-pointer">Загрузите
                                         файлы</label>
-                                    <input id="files" type={'file'} multiple className="hidden"
+                                    <input id="files" type='file' multiple className="hidden"
                                            onChange={(e) => {
                                                suggested_news.setFiles(e.target.files)
                                            }}/>
                                 </div>
 
-                                <input type={'text'} placeholder="Ссылка на источник" className="border-2 p-2"
+                                <input type='text' placeholder="Ссылка на источник" className="border-2 p-2"
                                        onChange={(e) => {
                                            suggested_news.setLink(e.target.value)
                                        }}/>
@@ -89,7 +90,7 @@ export default function Press({press}) {
                     </dialog>
                 </div>
             </div>
-        </div>
+        </MainPageLayout>
 
     )
 }

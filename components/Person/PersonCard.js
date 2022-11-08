@@ -28,7 +28,7 @@ export const PersonCard = (params) => {
             >
                 <Image src={process.env.APIpath + params.avatar.url} alt="some" width={200} height={200} className="w-40 h-40 rounded-full"/>
                 <div className="flex flex-col justify-between">
-                    <div className="flex flex-col gap-2 [&>p]:text-lg xs:[&>p]:text-2xl">
+                    <div className="flex flex-col gap-2">
                         <p>{params.surname}</p>
                         <p>{params.name}</p>
                         <p>{params.patronymic}</p>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import MyCarousel from "../components/MyCarousel/MyCarousel";
 import PostCard from "../components/Posts/PostCard";
-import dynamic from 'next/dynamic';
+import MainPageLayout from '../layouts/MainPageLayout';
 
 
 //предупреждаю, стили писал на отъебись если что пиши звони +79010177164 suldemka1@gmail.com
@@ -59,7 +59,7 @@ const Home = ({ content, news, page, pageSize, pageCount, total, links, sliderLi
 
     //рисую главную страницу
     return (
-        <>
+        <MainPageLayout>
             {/* рисует слайдер на главной странице и ссылки справа, можно не трогать, код меняется из компонента */}
             <div className="flex xs:flex-col md:flex-row gap-1">
                 <div className="xs:w-full md:w-4/5 max-w-4/5 flex flex-col overflow-hidden relative">
@@ -125,7 +125,7 @@ const Home = ({ content, news, page, pageSize, pageCount, total, links, sliderLi
                     }
                 </div>
             </div>
-        </>
+        </MainPageLayout>
     )
 }
 
