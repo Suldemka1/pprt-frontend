@@ -22,26 +22,24 @@ const Footer = (props) =>
                 </div>
 
                 <div className="flex flex-col justify-between">
-                    <Link href="/documents/sample.pdf">
+                    {/* <Link href="/documents/sample.pdf">
                         <a>Использование материалов</a>
                     </Link>
                     <Link href="/documents/personal_data.docx">
                         <a>О персональной информации пользователей</a>
-                    </Link>
+                    </Link> */}
 
                     <div className="flex gap-4">
                         <Link className="cursor-pointer" href="https://vk.com/club132363710">
-                            <Image alt='some' src="/vk_logo.png" width={30} height={30} className="cursor-pointer dark:grayscale"/>
+                            <a><Image alt='some' src="/vk_logo.png" width={30} height={30} className="cursor-pointer dark:grayscale"/></a>
                         </Link>
                         <Link className="cursor-pointer" href="https://t.me/polpredstvotuva">
-                            <Image alt='some' src="/tg_logo.png" width={30} height={30} className="cursor-pointer dark:grayscale"/>
+                            <a><Image alt='some' src="/tg_logo.png" width={30} height={30} className="cursor-pointer dark:grayscale"/></a>
                         </Link>
                     </div>
                 </div>
             </div>
-
             <hr/>
-
             <div className="">
                 <p>Все материалы сайта доступны по лицензии: Лицензия на пользование</p>
             </div>

@@ -76,7 +76,7 @@ export function unixTimeConverter(unix_time) {
   }
 
   else {
-    return (newsDate.getDate() + '.' + month + '.' + newsDate.getFullYear() + ' в ' + newsDate.getHours() + ':' + minutes)
+    return (newsDate.getDate() + '.' + month + '.' + newsDate.getFullYear() + ' в ' + String(Number(newsDate.getHours())) + ':' + minutes)
   }
 
 }

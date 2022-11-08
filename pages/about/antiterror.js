@@ -55,7 +55,7 @@ const Antiterror = ({ content }) =>
               </LeftMenu>
 
 
-              <div className="xs:w-full md:w-9/12">
+              <div className="xs:w-full md:w-9/12 [&>ul]:list-disc">
                   {parser(content?.content)}
               </div>
           </div>

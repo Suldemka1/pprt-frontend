@@ -1,8 +1,8 @@
-import {observer} from "mobx-react-lite"
+import { observer } from "mobx-react-lite"
 import PostCard from "../components/Posts/PostCard"
 import Link from "next/link"
 import searchQuery from "../store/search-query"
-import {useEffect} from "react"
+import { useEffect } from "react"
 import searchDocs from "../store/search-docs";
 import Head from "next/head";
 
@@ -25,15 +25,17 @@ const SearchPage = observer(() => {
 
         return (
             <Link href={`/news/${item.id}`} key={item.id} className={'news'}>
-                <PostCard
-                    id={item.id}
-                    title={item.title}
-                    preview_image={`${process.env.APIpath}` + item.preview_image.url}
-                    news_preview={item.news_preview}
-                    body={item.body}
-                    createdAt={item.createdAt
-                    }
-                />
+                <a>
+                    <PostCard
+                        id={item.id}
+                        title={item.title}
+                        preview_image={`${process.env.APIpath}` + item.preview_image.url}
+                        news_preview={item.news_preview}
+                        body={item.body}
+                        createdAt={item.createdAt
+                        }
+                    />
+                </a>
             </Link>
         )
     })
@@ -48,12 +50,12 @@ const SearchPage = observer(() => {
 
                 <div className="flex justify-content-between border rounded">
                     <input defaultValue={searchDocs.query}
-                           onChange={(e) => {
-                               searchQuery.search(e.target.value)
-                           }}
-                           className='w-full rounded-l px-2 outline-0'/>
+                        onChange={(e) => {
+                            searchQuery.search(e.target.value)
+                        }}
+                        className='w-full rounded-l px-2 outline-0' />
                     <button onClick={searchfunction}
-                            className="w-fit h-fit text-white bg-blue-900 rounded-r px-3 py-2">Поиск
+                        className="w-fit h-fit text-white bg-blue-900 rounded-r px-3 py-2">Поиск
                     </button>
                 </div>
 

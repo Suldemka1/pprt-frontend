@@ -14,18 +14,43 @@ export const getServerSideProps = async () => {
 
 export default function Management({ staff }) {
 
-  const show = staff.map((item) =>
-    <PersonCard
-      id={item.id}
-      key={item.id}
-      surname={item.surname}
-      name={item.name}
-      patronymic={item.patronymic}
-      position={item.position}
-      email={item.email}
-      phone={item.phone}
-      avatar={item.avatar}
-    />
+  const show = staff.map((item) => {
+
+    if (item.id === 1) {
+      return (
+        <span className="w-full">
+          <PersonCard
+            id={item.id}
+            key={item.id}
+            surname={item.surname}
+            name={item.name}
+            patronymic={item.patronymic}
+            position={item.position}
+            email={item.email}
+            phone={item.phone}
+            avatar={item.avatar}
+          />
+        </span>
+      )
+
+    }
+    else {
+      return <PersonCard
+        id={item.id}
+        key={item.id}
+        surname={item.surname}
+        name={item.name}
+        patronymic={item.patronymic}
+        position={item.position}
+        email={item.email}
+        phone={item.phone}
+        avatar={item.avatar}
+      />
+    }
+
+
+  }
+
   )
 
   return (

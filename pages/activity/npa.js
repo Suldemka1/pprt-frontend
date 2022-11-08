@@ -26,7 +26,7 @@ const Npa = (props) => {
             <div className="flex items-center justify-between">
                 <PageName title='Основные задачи'/>
                 <MobileMenu className="md:hidden">
-                    <MobileMenuItem title={'Основные задачи'} url={'/activity/main-activity'}/>
+                    {/* <MobileMenuItem title={'Основные задачи'} url={'/activity/main-activity'}/> */}
                     <MobileMenuItem title={'Нормотворческая деятельность государственного органа'}
                                     url={'/projects'}/>
                     <MobileMenuItem title={'Функции государственного органа'} url={'/activity/functions'}/>
@@ -36,21 +36,21 @@ const Npa = (props) => {
 
             <div className='flex xs:flex-col md:flex-row gap-5 w-full py-3'>
                 <LeftMenu>
-                    <MenuItem title={'Основные задачи'} url={'/activity/main-activity'}
-                              icon_function={FaChessQueen()}/>
+                    {/* <MenuItem title={'Основные задачи'} url={'/activity/main-activity'}
+                              icon_function={FaChessQueen()}/> */}
                     <MenuItem title={'Нормотворческая деятельность государственного органа'} url={'/projects'}
                               icon_function={VscTypeHierarchySub()}/>
                     <MenuItem title={'Функции государственного органа'} url={'/activity/functions'}
                               icon_function={VscTypeHierarchySub()}/>
                     <MenuItem title={'Перечень законов и иных нормативно-правовых актов, определяющих полномочия, задачи, функции государственного органа'}
-                              url={'/activity/npa'} />
+                              url={'/activity/npa'} icon_function={VscTypeHierarchySub()}/>
                 </LeftMenu>
-
-                <div>
+{/* 
+                <div className='xs:full md:w-9/12 leading-7 [&>p]:pb-3 [&>ul]:list-disc translate-x-6'>
                     {parser(props.content)}
-                </div>
+                </div> */}
 
-                {/* <div className='flex flex-col gap-5 xs:full md:w-9/12 leading-7 [&>p]:pb-3'>
+                <div className='flex flex-col gap-5 xs:w-full md:w-9/12 leading-7 [&>p]:pb-3'>
                     <button
                         className=" flex items-center gap-3 text-left cursor-pointer text-xl hover:text-blue-900">
                         <div>
@@ -79,7 +79,7 @@ const Npa = (props) => {
                         Республики Тыва в государственных программах Российской Федерации, федеральных целевых
                         программах и федеральной адресной инвестиционной программе».
                     </button>
-                </div> */}
+                </div>
             </div>
         </>
     )

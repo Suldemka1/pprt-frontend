@@ -1,5 +1,5 @@
-import React, { useState} from "react";
-import {AiOutlineLeft, AiOutlineRight} from "react-icons/ai";
+import React, { useState } from "react";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import Swipe from "react-easy-swipe";
 import Image from "next/image";
 
@@ -37,24 +37,20 @@ const MyCarousel = (params) => {
                 {
                     params.content.map((slide, index) => {
                         return (
-                            <>
-                                <div className={
-                                    index === currentSlide
-                                        ? "block min-w-full h-full"
-                                        : "hidden"
-                                }>
-                                    <Image
-                                        src={`${process.env.APIpath}${slide.image.url}`}
-                                        alt="This is a carousel slide"
-                                        layout={"responsive"}
-                                        width={300}
-                                        height={200}
-                                        objectFit={"cover"}
-                                        key={index}
-                                    />
-                                </div>
-                            </>
-
+                            <div key={index} className={
+                                index === currentSlide
+                                    ? "block min-w-full h-full"
+                                    : "hidden"
+                            }>
+                                <Image
+                                    src={`${process.env.APIpath}${slide.image.url}`}
+                                    alt="This is a carousel slide"
+                                    layout={"responsive"}
+                                    width={300}
+                                    height={200}
+                                    objectFit={"cover"}
+                                />
+                            </div>
                         );
                     })
                 }

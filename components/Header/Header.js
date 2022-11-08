@@ -26,9 +26,9 @@ const Header = observer((props, {children}) => {
 
                 <Image alt='some' src="/herb.svg.png" width={100} height={100} className="dark:grayscale"/>
 
-                <Link href="/">Главная</Link>
-                <Link href="/documents">Документы</Link>
-                <Link href={'/sendrequest'}>Прием обращений</Link>
+                <Link href="/"><a>Главная</a></Link>
+                <Link href="/documents"><a>Документы</a></Link>
+                <Link href='/sendrequest'><a>Прием обращений</a></Link>
 
                 <div className="flex flex-row justify-center items-center p-1 bg-white cursor-pointer">
 
@@ -38,12 +38,14 @@ const Header = observer((props, {children}) => {
                            className="text-sm text-black outline-0"/>
 
                     <Link href={'/search'}>
-                        <FaSearch
+                        <a>
+                            <FaSearch
                             onClick={(e) => {
                                 searchQuery.fetchPosts(searchQuery.query)
                             }}
                             className="z-10 text-black"
                         />
+                        </a>
                     </Link>
                 </div>
             </div>
@@ -71,7 +73,7 @@ const Header = observer((props, {children}) => {
             <div className="container mx-auto md:hidden py-3">
                 <MobileMenu className="text-black">
                     <MobileMenuItem url='/' title='Главная'/>
-                    <MobileMenuItem url='documents' title='Документы'/>
+                    <MobileMenuItem url='/documents' title='Документы'/>
                     <MobileMenuItem url='/sendrequest' title='Прием обращений'/>
                     <MobileMenuItem url='/about' title='О государственном органе'/>
                     <MobileMenuItem url='/activity' title='Деятельность'/>
@@ -83,10 +85,10 @@ const Header = observer((props, {children}) => {
 
             <div className="xs:hidden md:block bg-gray-100 py-3 text-black text-xl font-light">
                 <div className="container mx-auto flex flex-row justify-between">
-                    <Link href='/about' className='mb-3 mt-3 font-size-3'>О государственном органе</Link>
-                    <Link href='/activity' className='mb-3 mt-3 font-size-3'>Деятельность</Link>
-                    <Link href='/press-service' className='mb-3 mt-3 font-size-3'>Пресс-служба</Link>
-                    <Link href='/contacts' className='mb-3 mt-3 font-size-3'>Контакты</Link>
+                    <Link href='/about' className='mb-3 mt-3 font-size-3'><a>О государственном органе</a></Link>
+                    <Link href='/activity' className='mb-3 mt-3 font-size-3'><a>Деятельность</a></Link>
+                    <Link href='/press-service' className='mb-3 mt-3 font-size-3'><a>Пресс-служба</a></Link>
+                    <Link href='/contacts' className='mb-3 mt-3 font-size-3'><a>Контакты</a></Link>
                 </div>
             </div>
 

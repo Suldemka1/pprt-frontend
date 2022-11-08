@@ -30,29 +30,27 @@ function News({ posts, page, pageSize, pageCount, total }) {
 
   for (let number = 1; number <= pageCount; number++) {
     items.push(
-        <button key={number} className="bg-blue-900 border rounded px-3 py-2 text-white cursor-pointer"
-                onClick={() => {
-                  router.push(`/news/?page=${number}`)
-                }}>
-          {number}
-        </button>,
+      <button key={number} className="bg-blue-900 border rounded px-3 py-2 text-white cursor-pointer"
+        onClick={() => {
+          router.push(`/news/?page=${number}`)
+        }}>
+        {number}
+      </button>,
     );
   }
 
   const datamap = posts.map((item) => {
     return (
-      <Link href={`/news/${item.id}`} key={item.id} className={'news'}>
-        <PostCard
-          id={item.id}
-          title={item.title}
-          preview_image={`${process.env.APIpath}` + item.preview_image.url}
-          news_preview={item.news_preview}
-          body={item.body}
-          // tags={item.tags.data}
-          createdAt={item.createdAt
-          }
-        />
-      </Link>
+      <PostCard
+        key={item.id}
+        id={item.id}
+        title={item.title}
+        preview_image={`${process.env.APIpath}` + item.preview_image.url}
+        news_preview={item.news_preview}
+        body={item.body}
+        // tags={item.tags.data}
+        createdAt={item.createdAt}
+      />
     )
   })
 

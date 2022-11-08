@@ -8,6 +8,7 @@ import Head from "next/head";
 import React from "react";
 import {GrDocumentPdf} from "react-icons/gr";
 import {useRouter} from "next/router";
+import { AboutPageLayout } from "../../layouts/MainLayout/AboutPageLayout";
 
 export const getServerSideProps = async () => {
     const res = await fetch(`${process.env.APIpath}/api/anticorruption-page?populate=*`)
@@ -23,7 +24,7 @@ export const getServerSideProps = async () => {
 const Anticorruption = ({content}) => {
     const router = useRouter()
     return (
-        <div>
+        <AboutPageLayout>
             <Head>
                 <title>Антикоррупционная деятельность</title>
             </Head>
@@ -74,7 +75,7 @@ const Anticorruption = ({content}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </AboutPageLayout>
     );
 };
 

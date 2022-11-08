@@ -9,7 +9,7 @@ const Structure = () => {
     return (
         <div>
             <div className="flex xs:flex-col sm:flex-row xs:items-start items-center justify-between py-4">
-                <PageName title="Структура Полномочного представительсва"/>
+                <PageName title="Структура государственного органа"/>
                 <MobileMenu className="md:hidden">
                     <MobileMenuItem url='/management' title='Руководство'/>
                     <MobileMenuItem url='/about/structure' title='Структура'/>

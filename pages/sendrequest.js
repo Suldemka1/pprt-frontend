@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {PageName} from "../components/PageName/PageName";
+import React, { useState } from "react";
+import { PageName } from "../components/PageName/PageName";
 import Link from "next/link";
 import Head from 'next/head'
 import axios from 'axios'
@@ -32,7 +32,7 @@ export default function SendRequest() {
                 await formData.append('files.files', files[i], files[i].name)
             }
             await axios.post(`${process.env.APIpath}/api/appeals`, formData, {
-                headers: {"Content-Type": "multipart/form-data"},
+                headers: { "Content-Type": "multipart/form-data" },
             })
                 .then((res) => {
                     setSurname('')
@@ -58,9 +58,19 @@ export default function SendRequest() {
             <Head>
                 <title>Прием обращений</title>
             </Head>
-            <PageName title='Прием обращений'/>
+            <PageName title='Прием обращений' />
 
             <div className="leading-7 [&>p]:pb-3">
+                <p>Просим Вас внимательно ознакомиться с порядком приема и рассмотрения обращений,
+                направленных в адрес Полномочного представительства Республики Тыва в г. Москве.</p>
+                <p>Обращения, поступившие в адрес Полномочного представительства Республики Тыва в г. Москве,
+                рассматриваются в соответствии с положениями Федерального закона от 2 мая 2006 года № 59-ФЗ
+                «О порядке рассмотрения обращений граждан Российской Федерации».</p>
+                <p>Вы можете направить обращение в Полномочное представительство Республики Тыва в г. Москве:</p>
+                <p>- путем заполнения соответствующей формы, размещенной на официальном сайте</p>
+                <p>- путём его направления на почтовый или электронный адрес Полномочного представительства Республики Тыва в г. Москве</p>
+                <p>- путем звонка по телефону приемной Полномочного представительства Республики Тыва в г. Москве</p>
+                <hr/>
                 <p>1. Обращения, направленные в форме электронного документа через официальный сайт, поступают на
                     рассмотрение в Полномочное представительство Республики Тыва в г. Москве и рассматриваются
                     работниками
@@ -109,34 +119,30 @@ export default function SendRequest() {
                 <p>10. Информация о персональных данных авторов обращений, направленных в форме электронного документа,
                     сведения, содержащиеся в обращениях авторов, а также сведения, касающиеся частной жизни авторов,
                     хранятся и обрабатываются с соблюдением требований российского законодательства.</p>
-                <p className="font-normal">Обращения путем их направления почтой, на электронный адрес или по телефону</p>
-                <p>Адрес для отправки обращений почтой: 119049, г. Москва, ул. Донская, 8, корп. 2</p>
-                <p>Адрес электронной почты для отправки обращений: info@pprt17.ru</p>
-                    <p>Контактный телефон для обращений: +7(499)236-48-01</p>
             </div>
 
             <form className="w-fit py-3">
                 <div className="flex flex-col gap-3">
                     <input value={surname} onChange={(e) => setSurname(e.target.value)} placeholder="Фамилия"
-                           maxLength={30} required
-                           className="border border-black rounded py-2 px-3"/>
+                        maxLength={30} required
+                        className="border border-black rounded py-2 px-3" />
                     <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Имя"
-                           maxLength={30} required
-                           className="border border-black rounded py-2 px-3"/>
+                        maxLength={30} required
+                        className="border border-black rounded py-2 px-3" />
                     <input value={patronymic} onChange={(e) => setPatronymic(e.target.value)} placeholder="Отчество"
-                           maxLength={30}
-                           className="border border-black rounded py-2 px-3"/>
+                        maxLength={30}
+                        className="border border-black rounded py-2 px-3" />
                     <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Номер телефона"
-                           maxLength={12} required
-                           className="border border-black rounded py-2 px-3"/>
+                        maxLength={12} required
+                        className="border border-black rounded py-2 px-3" />
                     <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Адрес электронной почты"
-                           maxLength={30} required
-                           className="border border-black rounded py-2 px-3"/>
+                        maxLength={30} required
+                        className="border border-black rounded py-2 px-3" />
                     <textarea value={body} onChange={e => setBody(e.target.value)} rows={7}
-                              placeholder="Введите ваше сообщение"
-                              required
-                              maxLength={1500}
-                              className="w-full border border-black rounded py-3 px-3 resize-none"/>
+                        placeholder="Введите ваше сообщение"
+                        required
+                        maxLength={1500}
+                        className="w-full border border-black rounded py-3 px-3 resize-none" />
                     <p>
                         В случае необходимости в подтверждение своих доводов гражданин вправе приложить к обращению
                         необходимые документы и материалы в электронной форме, воспользовавшись функцией «Прикрепить
@@ -161,7 +167,7 @@ export default function SendRequest() {
 
                     <input type="file" onChange={(e) => {
                         setFiles(e.target.files)
-                    }} multiple={true}/>
+                    }} multiple={true} />
                 </div>
 
 

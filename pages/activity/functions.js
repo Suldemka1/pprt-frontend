@@ -16,7 +16,7 @@ const Functions = () => {
             <div className="flex items-center justify-between">
                 <PageName title='Функции Полномочного представительства'/>
                 <MobileMenu className="md:hidden">
-                    <MobileMenuItem title={'Основные задачи'} url={'/activity/main-activity'}/>
+                    {/* <MobileMenuItem title={'Основные задачи'} url={'/activity/main-activity'}/> */}
                     <MobileMenuItem title={'Нормотворческая деятельность государственного органа'}
                                     url={'/projects'}/>
                     <MobileMenuItem title={'Функции государственного органа'} url={'/activity/functions'}/>
@@ -27,8 +27,8 @@ const Functions = () => {
             <div className='flex xs:flex-col md:flex-row gap-5 w-full py-3'>
 
                 <LeftMenu>
-                    <MenuItem title={'Основные задачи'} url={'/activity/main-activity'}
-                              icon_function={FaChessQueen()}/>
+                    {/* <MenuItem title={'Основные задачи'} url={'/activity/main-activity'}
+                              icon_function={FaChessQueen()}/> */}
                     <MenuItem title={'Нормотворческая деятельность государственного органа'} url={'/projects'}
                               icon_function={VscTypeHierarchySub()}/>
                     <MenuItem title={'Функции государственного органа'} url={'/activity/functions'}
@@ -39,7 +39,7 @@ const Functions = () => {
                 </LeftMenu>
 
                 <div className="flex flex-col gap-5 md:w-9/12">
-                    <details>
+                    {/* <details>
                         <summary className="flex items-center gap-3 text-xl
                                             cursor-pointer list-none
                                             pb-4">
@@ -52,7 +52,7 @@ const Functions = () => {
                                 Тыва
                                 исполняет следующие функции:</p>
 
-                        </summary>
+                        </summary> */}
                         <div className='xs:full md:w-full leading-7 [&>p]:pb-3'>
 
                             <ul className="flex flex-col gap-5 list-disc translate-x-12">
@@ -203,10 +203,10 @@ const Functions = () => {
                                 </li>
                             </ul>
                         </div>
-                    </details>
+                    {/* </details> */}
 
 
-                    <details className="">
+                    {/* <details className="">
                         <summary className="flex items-center gap-3 text-xl
                                             cursor-pointer list-none
                                             pb-4">
@@ -246,7 +246,7 @@ const Functions = () => {
                                 программах и федеральной адресной инвестиционной программе».
                             </button>
                         </div>
-                    </details>
+                    </details> */}
                 </div>
 
             </div>

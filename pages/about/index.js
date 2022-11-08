@@ -76,7 +76,7 @@ export default function About({about}) {
                     </div>
 
 
-                    <Image src={'/location.webp'} loading={"lazy"} alt="some" width={1280} height={960}
+                    <Image src={'/location.webp'} priority={"preload"} alt="some" width={1280} height={960}
                            objectFit='cover' className='dark:grayscale'/>
                 </div>
             </div>

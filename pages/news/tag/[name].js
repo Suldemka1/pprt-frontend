@@ -23,11 +23,12 @@ export const getServerSideProps = async (context) => {
 };
 
 function News({ name, posts }) {
-  const datamap = posts.map((item) => {
 
+  const datamap = posts.map((item) => {
     return (
-      <Link href={`/news/${id}`} key={id} className={'news'}>
-        <PostCard
+      <Link href={`/news/${item.id}`} key={item.id} className={'news'}>
+        <a>
+          <PostCard
           id={item.id}
           title={item.title}
           upload_urls={item.upload_urls}
@@ -35,6 +36,7 @@ function News({ name, posts }) {
           tags={item.tags}
           createdAt={item.createdAt}
         />
+        </a>
       </Link>
     )
   })
