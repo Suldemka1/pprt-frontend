@@ -19,6 +19,14 @@ const Footer = (props) =>
                             <AiOutlineMail/>info@pprt17.ru
                         </div>
                     </div>
+                    <div className="flex gap-4">
+                        <Link className="cursor-pointer" href="https://vk.com/club132363710">
+                            <a><Image alt='some' src="/vk_logo.png" width={30} height={30} className="cursor-pointer dark:grayscale"/></a>
+                        </Link>
+                        <Link className="cursor-pointer" href="https://t.me/polpredstvotuva">
+                            <a><Image alt='some' src="/tg_logo.png" width={30} height={30} className="cursor-pointer dark:grayscale"/></a>
+                        </Link>
+                    </div>
                 </div>
 
                 <div className="flex flex-col justify-between">
@@ -29,14 +37,7 @@ const Footer = (props) =>
                         <a>О персональной информации пользователей</a>
                     </Link> */}
 
-                    <div className="flex gap-4">
-                        <Link className="cursor-pointer" href="https://vk.com/club132363710">
-                            <a><Image alt='some' src="/vk_logo.png" width={30} height={30} className="cursor-pointer dark:grayscale"/></a>
-                        </Link>
-                        <Link className="cursor-pointer" href="https://t.me/polpredstvotuva">
-                            <a><Image alt='some' src="/tg_logo.png" width={30} height={30} className="cursor-pointer dark:grayscale"/></a>
-                        </Link>
-                    </div>
+
                 </div>
             </div>
             <hr/>

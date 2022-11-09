@@ -14,7 +14,7 @@ const ActivityPageLayout = ({ children }) => {
       <Header />
 
       <div>
-        <MobileMenu className="md:hidden">
+        <MobileMenu>
           <MobileMenuItem url='/' title='Главная' />
           <MobileMenuItem url='/documents' title='Документы' />
           <MobileMenuItem url='/sendrequest' title='Прием обращений' />

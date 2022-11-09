@@ -21,7 +21,7 @@ export const DocumentCard = (params) => (
             </div>
         </div>
 
-        <div className="flex flex-row justify-between items-center p-3">
+        <div className="flex xs:flex-col md:flex-row justify-between xs:items-start md:items-center gap-3 p-3">
             <div className="">Дата подписания {Time.signingDateConverter(params.date)}</div>
 
             <Link href={`${process.env.APIpath}${params?.url}`}>

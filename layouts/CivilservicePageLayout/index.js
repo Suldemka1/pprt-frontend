@@ -14,7 +14,7 @@ const CivilservicePageLayout = ({ children }) => {
       <div className="container mx-auto text-black font-light min-h-[500px] py-10">
         <div>
           <PageName title='Государственная гражданская служба' />
-          <MobileMenu className="xs:block md:hidden">
+          <MobileMenu>
             <MobileMenuItem url='/' title='Главная' />
             <MobileMenuItem url='/documents' title='Документы' />
             <MobileMenuItem url='/sendrequest' title='Прием обращений' />

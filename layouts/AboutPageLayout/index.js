@@ -16,7 +16,7 @@ export const AboutPageLayout = ({ children }) => {
     <>
       <Header />
 
-      <MobileMenu className="md:hidden">
+      <MobileMenu>
         <MobileMenuItem url='/' title='Главная' />
         <MobileMenuItem url='/documents' title='Документы' />
         <MobileMenuItem url='/sendrequest' title='Прием обращений' />
@@ -53,7 +53,7 @@ export const AboutPageLayout = ({ children }) => {
             />
           </SidebarMenu>
 
-          <div className="xs:w-full md:w-9/12 [&>ul]:list-disc">
+          <div className="xs:w-full md:w-9/12 [&>ul]:list-disc [&>p]:text-justify">
             {children}
           </div>
 

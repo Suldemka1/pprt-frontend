@@ -5,7 +5,7 @@ const SidebarMenuItem = (params) => {
   const router = useRouter()
   
   return (
-      <li className="sm:hidden md:flex lg:flex xl:flex flex flex-row items-center gap-2 text-xl"
+      <li className="sm:hidden md:flex lg:flex xl:flex flex flex-row items-center gap-2 text-md"
           onClick={() => router.push(params.url)}>
           <p className="hover:text-white hover:scale-105 cursor-pointer">
               {params.title}
