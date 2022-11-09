@@ -4,6 +4,8 @@ import { PageName } from "../../components/PageName/PageName";
 import Head from "next/head";
 import React from "react";
 import ActivityPageLayout from '../../layouts/ActivityPageLayout';
+import MainPageLayout from '../../layouts/MainPageLayout';
+import StandartLayout from '../../layouts/StandartLayout';
 
 export const getServerSideProps = async () => {
     const res = await fetch(`${process.env.APIpath}/api/main-activity-page?populate=*`)
@@ -18,13 +20,17 @@ export const getServerSideProps = async () => {
 
 export default function Activity({ content }) {
     return (
-        <ActivityPageLayout title="Деятельность">
-            <Head>
-                <title>Деятельность</title>
-            </Head>
+        <StandartLayout>
+            <ActivityPageLayout title="Деятельность">
+                <Head>
+                    <title>Деятельность</title>
+                </Head>
 
-            {parser(content.content)}
+                {parser(content.content)}
 
-        </ActivityPageLayout>
+            </ActivityPageLayout>
+        </StandartLayout>
+
+
     )
 }

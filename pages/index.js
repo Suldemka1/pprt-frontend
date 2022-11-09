@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from "react";
 import MyCarousel from "../components/MyCarousel/MyCarousel";
 import PostCard from "../components/Posts/PostCard";
 import MainPageLayout from '../layouts/MainPageLayout';
+import StandartLayout from '../layouts/StandartLayout';
 
 
 //предупреждаю, стили писал на отъебись если что пиши звони +79010177164 suldemka1@gmail.com
@@ -59,73 +60,76 @@ const Home = ({ content, news, page, pageSize, pageCount, total, links, sliderLi
 
     //рисую главную страницу
     return (
-        <MainPageLayout>
-            {/* рисует слайдер на главной странице и ссылки справа, можно не трогать, код меняется из компонента */}
-            <div className="flex xs:flex-col md:flex-row gap-1">
-                <div className="xs:w-full md:w-4/5 max-w-4/5 flex flex-col overflow-hidden relative">
-                    <MyCarousel content={content} />
+        <StandartLayout>
+            <MainPageLayout>
+                {/* рисует слайдер на главной странице и ссылки справа, можно не трогать, код меняется из компонента */}
+                <div className="flex xs:flex-col md:flex-row gap-1">
+                    <div className="xs:w-full md:w-4/5 max-w-4/5 flex flex-col overflow-hidden relative">
+                        <MyCarousel content={content} />
+                    </div>
+                    <div className="flex xs:flex-row md:flex-col justify-between xs:w-full md:w-1/5 min-w-40 min-h-40">
+                        {
+                            sliderLinks.map((item) => {
+                                return (
+                                    <Link href={item.url} key={item.id} className="min-w-60 min-h-60 cursor-pointer">
+                                        <a>
+                                            <Image
+                                                src={`${process.env.APIpath}${item.image.url}`}
+                                                alt="First slide"
+                                                width={250}
+                                                height={240}
+                                                layout={"responsive"}
+                                                objectFit={"contain"}
+                                                className="min-w-40 min-h-40 dark:grayscale cursor-pointer"
+                                            />
+                                        </a>
+                                    </Link>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
-                <div className="flex xs:flex-row md:flex-col justify-between xs:w-full md:w-1/5 min-w-40 min-h-40">
-                    {
-                        sliderLinks.map((item) => {
-                            return (
-                                <Link href={item.url} key={item.id} className="min-w-60 min-h-60 cursor-pointer">
+
+
+                <div className="flex xs:flex-col sm:flex-col md:flex-col lg:flex-row py-5">
+
+                    <div className='flex flex-col gap-4 md:w-5/5 lg:w-4/5'>
+
+                        {
+                            news.map((item) =>
+                                <PostCard
+                                    key={item.id}
+                                    id={item.id}
+                                    title={item.title}
+                                    preview_image={`${process.env.APIpath}` + item.preview_image.url}
+                                    news_preview={item.news_preview}
+                                    body={item.body}
+                                    createdAt={item.createdAt}
+                                />
+                            )
+                        }
+
+                        {paginationBasic}
+
+                    </div>
+
+                    {/* ссылки справа, тоже просто передаются данные вовнутрь */}
+                    <div id="mainpagelinkmenu" className='xs:w-4/5 md:w-1/5'>
+                        {
+                            links.map((item) =>
+                                <Link href={item.url} key={item.id}>
                                     <a>
-                                        <Image
-                                            src={`${process.env.APIpath}${item.image.url}`}
-                                            alt="First slide"
-                                            width={250}
-                                            height={240}
-                                            layout={"responsive"}
-                                            objectFit={"contain"}
-                                            className="min-w-40 min-h-40 dark:grayscale cursor-pointer"
-                                        />
+                                        <Image alt='some' key={item.id} src={process.env.APIpath + item.image.url} width={240}
+                                            height={240} />
                                     </a>
                                 </Link>
                             )
-                        })
-                    }
+                        }
+                    </div>
                 </div>
-            </div>
+            </MainPageLayout>
+        </StandartLayout>
 
-
-            <div className="flex xs:flex-col sm:flex-col md:flex-col lg:flex-row py-5">
-
-                <div className='flex flex-col gap-4 md:w-5/5 lg:w-4/5'>
-
-                    {
-                        news.map((item) =>
-                            <PostCard
-                                key={item.id}
-                                id={item.id}
-                                title={item.title}
-                                preview_image={`${process.env.APIpath}` + item.preview_image.url}
-                                news_preview={item.news_preview}
-                                body={item.body}
-                                createdAt={item.createdAt}
-                            />
-                        )
-                    }
-
-                    {paginationBasic}
-
-                </div>
-
-                {/* ссылки справа, тоже просто передаются данные вовнутрь */}
-                <div id="mainpagelinkmenu" className='xs:w-4/5 md:w-1/5'>
-                    {
-                        links.map((item) =>
-                            <Link href={item.url} key={item.id}>
-                                <a>
-                                    <Image alt='some' key={item.id} src={process.env.APIpath + item.image.url} width={240}
-                                        height={240} />
-                                </a>
-                            </Link>
-                        )
-                    }
-                </div>
-            </div>
-        </MainPageLayout>
     )
 }
 

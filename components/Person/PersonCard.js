@@ -5,11 +5,11 @@ export const PersonCard = (params) => {
     const router = useRouter()
     return (
         <div id="card"
-             className="flex flex-col justify-between gap-5 w-5/12 min-w-5/12 h-88 border rounded-md
+             className="flex flex-col justify-between gap-5 w-12/12 min-w-5/12 h-88 border rounded-md
                           xs:w-full xs:items-center
                           sm:w-full
-                          md:w-5/12
-                          lg:w-5/12"
+                          md:w-12/12
+                          lg:w-12/12"
         >
             <div id="card-header"
                  className="flex items-center bg-gray-100 p-5 text-xl font-semibold h-20 text-left
@@ -26,15 +26,15 @@ export const PersonCard = (params) => {
                               md:flex-row md:justify-start md:items-left
                               lg:flex-row lg:justify-start lg:items-left"
             >
-                <Image src={process.env.APIpath + params.avatar.url} alt="some" width={200} height={200} className="w-40 h-40 rounded-full"/>
-                <div className="flex flex-col justify-between">
-                    <div className="flex flex-col gap-2">
+                <Image src={process.env.APIpath + params.avatar.url} alt="some" width={200} height={200} objectFit="cover" className="w-40 h-40 rounded-full"/>
+                <div className="flex flex-col justify-between gap-5">
+                    <div className="flex flex-col gap-2 text-2xl">
                         <p>{params.surname}</p>
                         <p>{params.name}</p>
                         <p>{params.patronymic}</p>
                     </div>
 
-                    <div className="[&>p]:text-sm">
+                    <div className="text-lg">
                         <p>{params.phone}</p>
                         <p>{params.email}</p>
                     </div>

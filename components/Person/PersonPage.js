@@ -39,7 +39,9 @@ export const PersonPage = (params) => {
 
                     <div className="p-3">
                         <div className="text-2xl font-normal">
-                            <h4>{params.surname} {params.name} {params.patronymic}</h4>
+                            <h4>{params.surname}</h4>
+                            <h4>{params.name}</h4>
+                            <h4>{params.patronymic}</h4>
                         </div>
 
                         <div className="text-xl font-normal">

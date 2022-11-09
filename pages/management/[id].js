@@ -1,4 +1,8 @@
+import { PageName } from "../../components/PageName/PageName"
 import { PersonPage } from "../../components/Person/PersonPage"
+import { AboutPageLayout } from "../../layouts/AboutPageLayout"
+import MainPageLayout from "../../layouts/MainPageLayout"
+import StandartLayout from "../../layouts/StandartLayout"
 
 export const getServerSideProps = async (context) => {
   const { id } = context.params
@@ -19,8 +23,9 @@ function getImagesList(params) {
 }
 
 const ManagementItem = ({ person }) =>
-  <>
-    <PersonPage
+  <StandartLayout>
+    <MainPageLayout>
+      <PersonPage
         id={person.id}
         title={person.surname}
 
@@ -37,8 +42,10 @@ const ManagementItem = ({ person }) =>
         email={person.email}
         phone={person.phone}
 
-    />
-  </>
+      />
+    </MainPageLayout>
+
+  </StandartLayout>
 
 
 

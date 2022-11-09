@@ -5,7 +5,7 @@ const SidebarMenu = ({children}) => {
           <div className="h-fit min-w-30 max-w-full rounded text-white
                           bg-blue-900 dark:bg-gray-400
                           p-4">
-              <ul className="flex flex-col gap-6 text-white dark:text-black">
+              <ul className="flex flex-col gap-6 text-white font-normal dark:text-black">
                   {children}
               </ul>
           </div>

@@ -1,4 +1,7 @@
+import { PageName } from "../../components/PageName/PageName"
 import { ProjectPages } from "../../components/Project/Project"
+import ActivityPageLayout from "../../layouts/ActivityPageLayout"
+import MainPageLayout from "../../layouts/MainPageLayout"
 
 export const getServerSideProps = async (context) => {
   const { id } = context.params
@@ -11,9 +14,16 @@ export const getServerSideProps = async (context) => {
 }
 
 const ProjectPage = ({ project }) =>
-  <ProjectPages
+<MainPageLayout>
+  <PageName title={project.title} />
+  <ActivityPageLayout>
+    <ProjectPages
     description={project.description}
     title={project.title}
     documentURL={project.documentation.url} />
+  </ActivityPageLayout>
+  
+</MainPageLayout>
+  
 
 export default ProjectPage

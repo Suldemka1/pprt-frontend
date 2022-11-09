@@ -1,21 +1,15 @@
 import Header from '../../components/Header'
 import Footer from '../../components/Footer/Footer'
 import { PageName } from '../../components/PageName/PageName'
-
 import MobileMenu from '../../components/MobileMenu/'
 import MobileMenuItem from '../../components/MobileMenu/MobileMenuItem'
 import SidebarMenu from '../../components/Sidebar/SidebarMenu'
 import SidebarMenuItem from '../../components/Sidebar/SidebarMenuItem'
-
-import { FaChessQueen, FaRegWindowMaximize } from "react-icons/fa";
-import { MdArticle } from "react-icons/md";
-import { VscTypeHierarchySub } from "react-icons/vsc";
+import StandartLayout from '../StandartLayout'
 
 export const AboutPageLayout = ({ children }) => {
   return (
     <>
-      <Header />
-
       <MobileMenu>
         <MobileMenuItem url='/' title='Главная' />
         <MobileMenuItem url='/documents' title='Документы' />
@@ -35,7 +29,6 @@ export const AboutPageLayout = ({ children }) => {
       </MobileMenu>
 
       <div className="container mx-auto text-black font-light min-h-[500px] py-10">
-        <PageName title="Структура государственного органа" />
 
         <div className="flex xs:flex-col md:flex-row gap-5">
 
@@ -60,7 +53,6 @@ export const AboutPageLayout = ({ children }) => {
         </div>
 
       </div>
-      <Footer />
     </>
   )
 }

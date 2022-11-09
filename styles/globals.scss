@@ -86,6 +86,10 @@ img {
   --font-size-h6: 2rem;
 }
 
+ul {
+  list-style: disc;
+}
+
 //h1 {
 //  font-size: var(--font-size-h1) !important;
 //  color: var(--font-color) !important;
@@ -122,10 +126,10 @@ img {
 //  text-decoration: none;
 //}
 //
-//p {
-//  font-size: var(--font-size-p) !important;
+// p {
+//  font-size: 17px !important;
 //  color: var(--font-color) !important;
-//}
+// }
 //
 //li {
 //  font-size: var(--font-size-li) !important;

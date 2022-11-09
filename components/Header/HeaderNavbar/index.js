@@ -1,18 +1,17 @@
 import React from 'react';
-import Link from "next/link";
+import HeaderNavbarItem from './HeaderNavbarItem'
 
 const HeaderNavbar = () => {
     return (
-        <div className="xs:hidden md:block bg-gray-200 py-3 text-black">
-            <div className="container mx-auto flex flex-row justify-between">
-                <Link href="/"><a>Главная</a></Link>
-                <Link href="/documents"><a>Документы</a></Link>
-                <Link href='/sendrequest'><a>Прием обращений</a></Link>
-                <Link href='/about'><a>О государственном органе</a></Link>
-                <Link href='/activity'><a>Деятельность</a></Link>
-                <Link href='/press-service'><a>Пресс-служба</a></Link>
-                <Link href='/contacts'><a>Контакты</a></Link>
-            </div>
+        <div
+            className="container mx-auto xs:hidden md:flex flex-row justify-between items-center">
+            <HeaderNavbarItem href="/">Главная</HeaderNavbarItem>
+            <HeaderNavbarItem href="/about">О государственном органе</HeaderNavbarItem>
+            <HeaderNavbarItem href="/activity">Деятельность</HeaderNavbarItem>
+            <HeaderNavbarItem href="/documents">Документы</HeaderNavbarItem>
+            <HeaderNavbarItem href="/sendrequest">Прием обращений</HeaderNavbarItem>
+            <HeaderNavbarItem href="/press-service">Пресс-служба</HeaderNavbarItem>
+            <HeaderNavbarItem href="/contacts">Контакты</HeaderNavbarItem>
         </div>
     );
 };

@@ -5,8 +5,8 @@ const MobileMenu = ({ children, className }) => {
     const [isNavOpen, setIsNavOpen] = useState(false);
 
     return (
-        <div className="xs:black md:hidden">
-            <nav className="bg-blue-900 dark:bg-gray-900 rounded-3 p-3">
+        <div className="xs:black md:hidden bg-blue-900 dark:bg-gray-900">
+            <nav className="container mx-auto rounded-3 p-3">
                 <section className="MOBILE-MENU flex">
                     <div
                         className="HAMBURGER-ICON space-y-2"

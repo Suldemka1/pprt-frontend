@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { PostPage } from "../../components/Posts/PostPage";
+import MainPageLayout from "../../layouts/MainPageLayout";
 
 export const getServerSideProps = async (context) => {
   const { id } = context.params
@@ -12,7 +13,7 @@ export const getServerSideProps = async (context) => {
 };
 
 const NewsItem = ({ post }) => (
-  <>
+  <MainPageLayout>
     <Head>
       <title>Новость #{post.id}</title>
     </Head>
@@ -24,7 +25,7 @@ const NewsItem = ({ post }) => (
       body={post.body}
       tags={post.tags.data}
     />
-  </>
+  </MainPageLayout>
 );
 
 export default NewsItem;

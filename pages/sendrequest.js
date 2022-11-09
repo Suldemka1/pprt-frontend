@@ -4,7 +4,8 @@ import Head from 'next/head'
 import axios from 'axios'
 import MainPageLayout from "../layouts/MainPageLayout";
 import AppealPageNotice from "../components/SendAppeal/AppealPageNotice";
-import {useState} from "react";
+import { useState } from "react";
+import StandartLayout from "../layouts/StandartLayout";
 
 export default function SendRequest() {
     const [surname, setSurname] = useState('')
@@ -56,90 +57,91 @@ export default function SendRequest() {
     };
 
     return (
-        <MainPageLayout>
-            <Head>
-                <title>Прием обращений</title>
-            </Head>
-            <PageName title='Прием обращений' />
+        <StandartLayout>
+            <MainPageLayout>
+                <Head>
+                    <title>Прием обращений</title>
+                </Head>
+                <PageName title='Прием обращений' />
 
-            <AppealPageNotice />
+                <AppealPageNotice />
 
-            <form className="w-fit py-3">
-                <div className="flex flex-col gap-3">
-                    <input value={surname} onChange={(e) => setSurname(e.target.value)} placeholder="Фамилия"
-                        maxLength={30} required
-                        className="border border-black rounded py-2 px-3" />
-                    <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Имя"
-                        maxLength={30} required
-                        className="border border-black rounded py-2 px-3" />
-                    <input value={patronymic} onChange={(e) => setPatronymic(e.target.value)} placeholder="Отчество"
-                        maxLength={30}
-                        className="border border-black rounded py-2 px-3" />
-                    <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Номер телефона"
-                        maxLength={12} required
-                        className="border border-black rounded py-2 px-3" />
-                    <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Адрес электронной почты"
-                        maxLength={30} required
-                        className="border border-black rounded py-2 px-3" />
-                    <textarea value={body} onChange={e => setBody(e.target.value)} rows={7}
-                        placeholder="Введите ваше сообщение"
-                        required
-                        maxLength={1500}
-                        className="w-full border border-black rounded py-3 px-3 resize-none" />
-                    <p>
-                        В случае необходимости в подтверждение своих доводов гражданин вправе приложить к обращению
-                        необходимые документы и материалы в электронной форме, воспользовавшись функцией «Прикрепить
-                        файл».</p>
-                    <p>Обращаем внимание, что прикрепляемые в предложенном на сайте формате документы и материалы
-                        служат лишь подтверждением доводов автора обращения, изложенных в тексте обращения.</p>
-                    <p>Приложить необходимые документы и материалы в электронной форме можно в любой последовательности
-                        двумя самостоятельными вложениями файла без архивирования (файл вложения) по одному из двух
-                        разных типов допустимых форматов:</p>
-                    <p>текстового (графического) формата: txt, doc, docx, rtf, xls, xlsx, pps, ppt, odt, ods, odp, pub,
-                        pdf, jpg, jpeg, bmp, png, tif, gif, pcx;</p>
-                    <p>аудио- (видео-) формата: mp3, wma, avi, mp4, mkv, wmv, mov, flv.</p>
-                    <p>Иные форматы не обрабатываются.</p>
-                    <p>При подключении оборудования пользователя к сети «Интернет» по выделенным каналам связи с
-                        использованием технологий ADSL, 3G, 4G, WiFi и иных технологий, обеспечивающих аналогичные
-                        скорости передачи данных в сети «Интернет», передача и обработка файла(ов) с суммарным размером:
-                        - до 5 Мб осуществляется, как правило, без задержки во времени;
-                        - от 5 Мб до 10 Мб может осуществляться с задержкой во времени;
-                        - свыше 10 Мб может быть не осуществлена.</p>
-                    <p>Для приложения к обращению необходимых документов и материалов в электронной форме нажмите
-                        кнопку «Выберите файл».</p>
+                <form className="w-fit py-3">
+                    <div className="flex flex-col gap-3">
+                        <input value={surname} onChange={(e) => setSurname(e.target.value)} placeholder="Фамилия"
+                            maxLength={30} required
+                            className="border border-black rounded py-2 px-3" />
+                        <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Имя"
+                            maxLength={30} required
+                            className="border border-black rounded py-2 px-3" />
+                        <input value={patronymic} onChange={(e) => setPatronymic(e.target.value)} placeholder="Отчество"
+                            maxLength={30}
+                            className="border border-black rounded py-2 px-3" />
+                        <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Номер телефона"
+                            maxLength={12} required
+                            className="border border-black rounded py-2 px-3" />
+                        <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Адрес электронной почты"
+                            maxLength={30} required
+                            className="border border-black rounded py-2 px-3" />
+                        <textarea value={body} onChange={e => setBody(e.target.value)} rows={7}
+                            placeholder="Введите ваше сообщение"
+                            required
+                            maxLength={1500}
+                            className="w-full border border-black rounded py-3 px-3 resize-none" />
+                        <p>
+                            В случае необходимости в подтверждение своих доводов гражданин вправе приложить к обращению
+                            необходимые документы и материалы в электронной форме, воспользовавшись функцией «Прикрепить
+                            файл».</p>
+                        <p>Обращаем внимание, что прикрепляемые в предложенном на сайте формате документы и материалы
+                            служат лишь подтверждением доводов автора обращения, изложенных в тексте обращения.</p>
+                        <p>Приложить необходимые документы и материалы в электронной форме можно в любой последовательности
+                            двумя самостоятельными вложениями файла без архивирования (файл вложения) по одному из двух
+                            разных типов допустимых форматов:</p>
+                        <p>текстового (графического) формата: txt, doc, docx, rtf, xls, xlsx, pps, ppt, odt, ods, odp, pub,
+                            pdf, jpg, jpeg, bmp, png, tif, gif, pcx;</p>
+                        <p>аудио- (видео-) формата: mp3, wma, avi, mp4, mkv, wmv, mov, flv.</p>
+                        <p>Иные форматы не обрабатываются.</p>
+                        <p>При подключении оборудования пользователя к сети «Интернет» по выделенным каналам связи с
+                            использованием технологий ADSL, 3G, 4G, WiFi и иных технологий, обеспечивающих аналогичные
+                            скорости передачи данных в сети «Интернет», передача и обработка файла(ов) с суммарным размером:
+                            - до 5 Мб осуществляется, как правило, без задержки во времени;
+                            - от 5 Мб до 10 Мб может осуществляться с задержкой во времени;
+                            - свыше 10 Мб может быть не осуществлена.</p>
+                        <p>Для приложения к обращению необходимых документов и материалов в электронной форме нажмите
+                            кнопку «Выберите файл».</p>
 
-                    <input type="file" onChange={(e) => {
-                        setFiles(e.target.files)
-                    }} multiple={true} />
-                </div>
+                        <input type="file" onChange={(e) => {
+                            setFiles(e.target.files)
+                        }} multiple={true} />
+                    </div>
 
-                <div className="flex gap-2">
-                    <input
-                        type="checkbox"
-                        id="custom-switch"
-                        checked={offerCheck}
-                        onChange={() => {
-                            offerCheck === false ? setOfferCheck(true) : setOfferCheck(false)
-                        }}
-                    />
+                    <div className="flex gap-2">
+                        <input
+                            type="checkbox"
+                            id="custom-switch"
+                            checked={offerCheck}
+                            onChange={() => {
+                                offerCheck === false ? setOfferCheck(true) : setOfferCheck(false)
+                            }}
+                        />
 
-                    <Link
-                        href={`${process.env.APIpath}/uploads/Obrashheniya_v_forme_elektronnogo_dokumenta_cherez_oficzialnyj_sajt_2557efe2fe.pages`}>
-                        <a>Я ознакомлен с Политикой обработки персональных данных и принимаю публичную Оферту</a>
-                    </Link>
-                </div>
+                        <Link
+                            href={`${process.env.APIpath}/uploads/Obrashheniya_v_forme_elektronnogo_dokumenta_cherez_oficzialnyj_sajt_2557efe2fe.pages`}>
+                            <a>Я ознакомлен с Политикой обработки персональных данных и принимаю публичную Оферту</a>
+                        </Link>
+                    </div>
 
-                <button
-                    type="submit"
-                    disabled={!offerCheck}
-                    onClick={uploadToServer}
-                    className={offerCheck ? "activated" : "disabled"}>
-                    Отправить
-                </button>
-            </form>
+                    <button
+                        type="submit"
+                        disabled={!offerCheck}
+                        onClick={uploadToServer}
+                        className={offerCheck ? "activated" : "disabled"}>
+                        Отправить
+                    </button>
+                </form>
 
-            <style>
-                {`
+                <style>
+                    {`
                     .disabled {
                         width: fit-content;
                         padding-top: 0.5rem;
@@ -171,7 +173,9 @@ export default function SendRequest() {
                          background-color: #1D4ED8; 
                     }
                 `}
-            </style>
-        </MainPageLayout>
+                </style>
+            </MainPageLayout>
+        </StandartLayout>
+
     )
 }

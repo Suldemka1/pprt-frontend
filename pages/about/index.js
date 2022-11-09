@@ -5,6 +5,8 @@ import Image from "next/image";
 import { GrDocumentPdf } from "react-icons/gr";
 import { useRouter } from "next/router";
 import { AboutPageLayout } from "../../layouts/AboutPageLayout";
+import MainPageLayout from "../../layouts/MainPageLayout";
+import StandartLayout from "../../layouts/StandartLayout";
 
 export const getServerSideProps = async () => {
     const res = await fetch(`${process.env.APIpath}/api/about?populate=*`)
@@ -20,7 +22,9 @@ export const getServerSideProps = async () => {
 export default function About({ about }) {
     const router = useRouter()
     return (
-        <AboutPageLayout>
+        <StandartLayout>
+            <PageName title="О государственном органе" />
+            <AboutPageLayout>
             <Head>
                 <title>О государственном органе</title>
             </Head>
@@ -42,5 +46,7 @@ export default function About({ about }) {
                 objectFit='cover' className='dark:grayscale' />
 
         </AboutPageLayout>
+        </StandartLayout>
+        
     )
 }

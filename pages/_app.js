@@ -9,7 +9,7 @@ import { observer } from 'mobx-react-lite';
 import DarkMode from "../components/Eyes";
 
 const MyApp = observer(({ Component, pageProps }) => {
-  
+
   return (
     <>
       <Head>
@@ -20,10 +20,10 @@ const MyApp = observer(({ Component, pageProps }) => {
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={true}></link>
       </Head>
-
-      { theme.theme === 'dark' &&  (<DarkMode />) }
-
-      <Component {...pageProps} />
+      {theme.theme === 'dark' && (<DarkMode />)}
+      <div className='min-h-screen flex flex-col'>
+        <Component {...pageProps} />
+      </div>
     </>
   )
 })
