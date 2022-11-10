@@ -19,8 +19,8 @@ const MyApp = observer(({ Component, pageProps }) => {
         <link rel="icon" href="/tuvan_herb.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={true}></link>
-
       </Head>
+      
       {theme.theme === 'dark' && (<DarkMode />)}
 
       <div className='min-h-screen flex flex-col'>
