@@ -19,14 +19,15 @@ const MyApp = observer(({ Component, pageProps }) => {
         <link rel="icon" href="/tuvan_herb.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={true}></link>
-        <Script src='https://lidrekon.ru/slep/js/uhpv-full.min.js'></Script>
-        <Script src='https://lidrekon.ru/slep/js/jquery.js'></Script>
+
       </Head>
       {theme.theme === 'dark' && (<DarkMode />)}
 
       <div className='min-h-screen flex flex-col'>
         <Component {...pageProps} />
       </div>
+      <Script src='https://lidrekon.ru/slep/js/uhpv-full.min.js'></Script>
+      <Script src='https://lidrekon.ru/slep/js/jquery.js'></Script>
     </>
   )
 })
