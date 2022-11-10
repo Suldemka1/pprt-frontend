@@ -19,8 +19,8 @@ const MyApp = observer(({ Component, pageProps }) => {
         <link rel="icon" href="/tuvan_herb.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={true}></link>
-        <script src='https://lidrekon.ru/slep/js/uhpv-full.min.js'></script>
-        <script src='https://lidrekon.ru/slep/js/jquery.js'></script>
+        <Script src='https://lidrekon.ru/slep/js/uhpv-full.min.js'></Script>
+        <Script src='https://lidrekon.ru/slep/js/jquery.js'></Script>
       </Head>
       {theme.theme === 'dark' && (<DarkMode />)}
 
