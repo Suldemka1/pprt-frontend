@@ -31,7 +31,7 @@ const Npa = ({ documents }) => {
                 <div className='flex flex-col gap-2'>
                     {
                         documents.map((item) =>
-                            <DocumentLink filename={item.document[0].name} url={`${item.document[0].url}`} />
+                            <DocumentLink key={item.id} filename={item.document[0].name} url={`${item.document[0].url}`} />
                         )
                     }
 
