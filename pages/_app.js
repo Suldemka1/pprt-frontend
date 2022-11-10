@@ -26,8 +26,8 @@ const MyApp = observer(({ Component, pageProps }) => {
       <div className='min-h-screen flex flex-col'>
         <Component {...pageProps} />
       </div>
-      <Script src='https://lidrekon.ru/slep/js/uhpv-full.min.js'></Script>
-      <Script src='https://lidrekon.ru/slep/js/jquery.js'></Script>
+      <Script src="https://lidrekon.ru/slep/js/jquery.js"></Script>
+      <Script src="https://lidrekon.ru/slep/js/uhpv-hover-full.min.js"></Script>
     </>
   )
 })
