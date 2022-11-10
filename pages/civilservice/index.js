@@ -7,6 +7,7 @@ import StandartLayout from "../../layouts/StandartLayout";
 const Vacancy = () => {
     return (
         <StandartLayout>
+            <PageName title="Государственная служба" />
             <CivilservicePageLayout>
                 <div className="leading-7 [&>p]:pb-3">
                     <p className="">

@@ -33,9 +33,6 @@ const CivilservicePageLayout = ({ children }) => {
 
         <div className="container mx-auto flex flex-row gap-5">
           <SidebarMenu>
-            <SidebarMenuItem title='Нормотворческая деятельность государственного органа' url='/projects' />
-            <SidebarMenuItem title='Функции государственного органа' url='/activity/functions' />
-            <SidebarMenuItem title='Перечень законов и иных нормативно-правовых актов, определяющих полномочия, задачи, функции государственного органа' url="/activity/npa" />
             <SidebarMenuItem title="Сведения о вакантных должностях государственной гражданской службы" url='/civilservice/vacancies' />
             <SidebarMenuItem title="Квалификационные требования к кандидатам на замещение вакантных должностей государственной гражданской службы" url='/civilservice/requirements' />
             <SidebarMenuItem title="Условия и результаты конкурсов на замещение вакантных должностей государственной гражданской службы" url='/civilservice/results' />

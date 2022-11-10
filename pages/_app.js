@@ -2,8 +2,6 @@ import React from 'react';
 import Head from 'next/head'
 const Footer = React.lazy(() => import('../components/Footer/Footer'))
 import '../styles/globals.scss'
-import Header from '../components/Header';
-import MainPageLayout from '../layouts/MainPageLayout/';
 import theme from '../store/theme';
 import { observer } from 'mobx-react-lite';
 import DarkMode from "../components/Eyes";
@@ -19,6 +17,8 @@ const MyApp = observer(({ Component, pageProps }) => {
         <link rel="icon" href="/tuvan_herb.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={true}></link>
+        <script src="https://lidrekon.ru/slep/js/jquery.js"></script>
+        <script src="https://lidrekon.ru/slep/js/uhpv-full.min.js"></script>
       </Head>
       {theme.theme === 'dark' && (<DarkMode />)}
       <div className='min-h-screen flex flex-col'>

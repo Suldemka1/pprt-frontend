@@ -21,7 +21,8 @@ export const getServerSideProps = async () => {
 export default function Activity({ content }) {
     return (
         <StandartLayout>
-            <ActivityPageLayout title="Деятельность">
+            <PageName title="Деятельность" />
+            <ActivityPageLayout>
                 <Head>
                     <title>Деятельность</title>
                 </Head>

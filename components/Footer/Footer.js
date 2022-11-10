@@ -3,7 +3,7 @@ import {AiFillPhone, AiOutlineMail} from 'react-icons/ai'
 import Image from 'next/image'
 
 const Footer = (props) =>
-    <footer className="bg-blue-900 dark:bg-gray-200 p-4 font-light">
+    <footer className="sticky top-[100vh] bg-blue-900 dark:bg-gray-200 p-4 font-light">
         <div className="container flex flex-col mx-auto gap-4 text-white dark:text-black">
             <div className="flex flex-wrap justify-between">
 

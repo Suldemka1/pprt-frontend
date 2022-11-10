@@ -11,6 +11,10 @@
   font-family: 'Roboto', sans-serif !important;
 }
 
+body {
+  min-height: 100vh;
+}
+
 img {
   display: var(--image-display);
   filter: var(--image-grayscale);
@@ -88,6 +92,11 @@ img {
 
 ul {
   list-style: disc;
+  margin-left: 20px;
+}
+
+li {
+  font-size: 17px;
 }
 
 //h1 {

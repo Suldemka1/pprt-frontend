@@ -32,6 +32,17 @@ module.exports = {
       'xl': '1024px',
 
       '2xl': '1280px',
+    },
+    fontFamily: {
+      sans: ['Roboto', 'sans-serif'],
+    },
+    fontSize: {
+      'sm': '13px',
+      'xs': '15px',
+      'md': '17px',
+      'lg': '19px',
+      'xl': '21px',
+      '2xl': '23px',
     }
   },
   plugins: [],

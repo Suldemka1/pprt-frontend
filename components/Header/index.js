@@ -22,21 +22,16 @@ const Header = observer((props, { children }) => {
         <header className="flex flex-col bg-blue-900 dark:bg-gray-400 text-white dark:text-black font-light">
 
             <div className="container mx-auto flex xs:flex-col md:flex-row items-center justify-between py-4">
-                <div className="flex items-center text-lg font-light gap-3">
-                    <Image alt='some' src="/herb.svg.png" width={50} height={50} className="md:hidden lg:block dark:grayscale" />
+                <div className="flex flex-row items-center text-lg font-light gap-3">
+                    <Image alt='some' src="/tuvan_herb.png" width={50} height={50} className="md:hidden lg:block dark:grayscale" />
                     <h1 className="text-2xl font-normal">Полномочное представительство Республики Тыва в г. Москве</h1>
                 </div>
 
                 <div className="flex gap-3 items-center">
-                    <div
-                        className="xs:hidden lg:flex gap-2 items-center rounded p-2 cursor-pointer"
-                        onClick={handleChangeTheme}>
-
-                        <div className="w-7 h-7">
-                            <FaRegEye className="w-full h-full" />
-                        </div>
+                    {/* id=specialButton включает режим для слабовидящих через скрипт */}
+                    <div className="w-7 h-7">
+                        <FaRegEye id='specialButton' className="w-full h-full cursor-pointer" />
                     </div>
-
                     <HeaderSearchField />
                 </div>
 

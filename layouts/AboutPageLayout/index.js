@@ -36,7 +36,6 @@ export const AboutPageLayout = ({ children }) => {
             <SidebarMenuItem url='/management' title='Руководство' />
             <SidebarMenuItem url='/about/structure' title='Структура' />
             <SidebarMenuItem url='/news' title='Новости' />
-            <SidebarMenuItem url='/documents' title='Документы' />
             <SidebarMenuItem url='/about/occupationalSecurity' title='Охрана труда' />
             <SidebarMenuItem url='/about/anticorruption' title='Противодействие коррупции'
             />

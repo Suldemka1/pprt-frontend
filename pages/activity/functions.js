@@ -2,7 +2,6 @@ import { PageName } from "../../components/PageName/PageName";
 import Head from "next/head";
 import React from "react";
 import ActivityPageLayout from "../../layouts/ActivityPageLayout";
-import MainPageLayout from "../../layouts/MainPageLayout";
 import StandartLayout from "../../layouts/StandartLayout";
 
 const Functions = () => {
@@ -15,9 +14,11 @@ const Functions = () => {
                     <title>Функции государственного органа</title>
                 </Head>
 
-                <div className='xs:full md:w-full leading-7 [&>p]:pb-3'>
-                    <h3>Функции Полномочного представительства Республики Тыва в г. Москве:</h3>
-                    <ul className="flex flex-col gap-5 list-disc translate-x-6">
+                <div className='xs:full md:w-full text-md leading-7 [&>p]:pb-3'>
+
+                    <h2>Функции Полномочного представительства Республики Тыва в г. Москве:</h2>
+
+                    <ul className="flex flex-col list-disc">
                         <li>представляет интересы Республики Тыва, в том числе Главы Республики Тыва,
                             Правительства
                             Республики

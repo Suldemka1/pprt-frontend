@@ -1,6 +1,7 @@
 import VacancyCard from '../../components/Civilservice/Vacancy/VacancyCard'
 import { PageName } from '../../components/PageName/PageName'
 import CivilservicePageLayout from '../../layouts/CivilservicePageLayout'
+import StandartLayout from '../../layouts/StandartLayout'
 
 export const getServerSideProps = async () => {
     const res = await fetch(`${process.env.APIpath}/api/vacancies?populate=*`)
@@ -22,11 +23,9 @@ const Vacancies = ({vacancy}) => {
     )
 
     return (
-        <CivilservicePageLayout>
-
-            <div>
-                <PageName title='Сведения о вакантных должностях государственной гражданской службы'/>
-            </div>
+        <StandartLayout>
+            <PageName title="Сведения о вакантных должностях государственной гражданской службы"/>
+            <CivilservicePageLayout>
 
             <div className="flex flex-row gap-5 w-full">
                 
@@ -36,6 +35,8 @@ const Vacancies = ({vacancy}) => {
                 </div>
             </div>
         </CivilservicePageLayout>
+        </StandartLayout>
+        
     )
 }
 
