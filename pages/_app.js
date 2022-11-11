@@ -7,6 +7,7 @@ import { observer } from 'mobx-react-lite';
 import DarkMode from "../components/Eyes";
 import Script from 'next/script';
 import Image from 'next/image';
+import Document from './_document';
 
 const MyApp = observer(({ Component, pageProps }) => (
   <>
@@ -17,14 +18,15 @@ const MyApp = observer(({ Component, pageProps }) => (
       <link rel="icon" href="/tuvan_herb.png" />
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={true}></link>
+      {/* <link href="/dist/css/bvi.min.css" rel="stylesheet"></link> */}
     </Head>
 
     {theme.theme === 'dark' && (<DarkMode />)}
-
+    <bviMin />
     <div className='min-h-screen flex flex-col'>
       <Component {...pageProps} />
     </div>
-    
+    {/* <Script src="/dist/js/bvi.min.js"></Script> */}
   </>
 ))
 

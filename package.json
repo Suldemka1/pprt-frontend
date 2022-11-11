@@ -13,6 +13,7 @@
     "@ckeditor/ckeditor5-react": "^5.0.2",
     "autoprefixer": "^10.4.12",
     "axios": "^0.27.2",
+    "bvi": "^1.0.2",
     "dotenv": "^16.0.1",
     "embla-carousel-autoplay": "^7.0.3",
     "embla-carousel-react": "^7.0.3",

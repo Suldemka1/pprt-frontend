@@ -1,12 +1,11 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import MyCarousel from "../components/MyCarousel/MyCarousel";
 import PostCard from "../components/Posts/PostCard";
 import MainPageLayout from '../layouts/MainPageLayout';
 import StandartLayout from '../layouts/StandartLayout';
-
 
 //предупреждаю, стили писал на отъебись если что пиши звони +79010177164 suldemka1@gmail.com
 
