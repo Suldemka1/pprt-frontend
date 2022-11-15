@@ -30,7 +30,7 @@ export default function Contacts({ contact }) {
 
           </div>
           <div className="flex flex-col gap-5 text-xl font-semibold">
-            <p>Полномочное представительство Республики Тыва в г. Москве на карты</p>
+            <p>Полномочное представительство Республики Тыва в г. Москве на карте</p>
             <iframe
               src="https://yandex.ru/map-widget/v1/?um=constructor%3A7045c293e45fe37592b1c515871daae32362eeb26ace504dafa8483038b835ca&amp;source=constructor"
               width="100%" height="500"></iframe>

@@ -9,7 +9,7 @@ const Vacancy = () => {
         <StandartLayout>
             <PageName title="Государственная служба" />
             <CivilservicePageLayout>
-                <div className="leading-7 [&>p]:pb-3">
+                <div className="leading-7 text-justify [&>p]:pb-3">
                     <p className="">
                         Государственная гражданская служба Республики Тыва – вид государственной службы, представляющей собой
                         профессиональную служебную деятельность граждан Российской Федерации на должностях государственной
