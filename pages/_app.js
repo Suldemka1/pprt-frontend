@@ -22,7 +22,6 @@ const MyApp = observer(({ Component, pageProps }) => (
     </Head>
 
     {theme.theme === 'dark' && (<DarkMode />)}
-    <bviMin />
     <div className='min-h-screen flex flex-col'>
       <Component {...pageProps} />
     </div>

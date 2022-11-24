@@ -26,6 +26,7 @@ export const AboutPageLayout = ({ children }) => {
         <MobileMenuItem url='/about/anticorruption' title='Противодействие коррупции' />
         <MobileMenuItem url='/about/antiterror' title='Противодействие терроризму' />
         <MobileMenuItem url='/vacancy' title='Государственная служба' />
+        <MobileMenuItem url='/about/purchases' title='Государственные закупки' />
       </MobileMenu>
 
       <div className="container mx-auto text-black font-light min-h-[500px] py-10">
@@ -43,9 +44,10 @@ export const AboutPageLayout = ({ children }) => {
             />
             <SidebarMenuItem url='/civilservice' title='Государственная служба'
             />
+            <SidebarMenuItem url='/about/purchases' title='Государственные закупки' />
           </SidebarMenu>
 
-          <div className="xs:w-full md:w-9/12 [&>ul]:list-disc [&>p]:text-justify">
+          <div className="xs:w-full md:w-9/12 [&>ul]:list-disc [&>p]:text-justify sm:py-3 xs:py-3 md:py-0 lg:py-0">
             {children}
           </div>
 

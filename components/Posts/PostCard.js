@@ -2,6 +2,7 @@ import Image from "next/image";
 import {unixTimeConverter} from "../functions/unixTimeConverter";
 import Link from "next/link";
 import React from "react";
+import myImageLoader from "../../loader";
 
 const PostCard = (params) => {
 
@@ -12,7 +13,7 @@ const PostCard = (params) => {
             <div className="flex xs:flex-col md:flex-row border-2 rounded-r" key={params.id}>
 
                 <div className='block sm:min-w-[calc(200px)] md:min-w-[calc(350px)]'>
-                    <Image alt='some' src={params.preview_image} width={300} height={200} layout="responsive"
+                    <Image loader={myImageLoader} alt='some' src={params.preview_image} width={300} height={200} layout="responsive"
                            objectFit="cover" className='dark:grayscale'/>
                 </div>
 

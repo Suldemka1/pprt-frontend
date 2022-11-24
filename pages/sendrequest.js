@@ -6,6 +6,7 @@ import MainPageLayout from "../layouts/MainPageLayout";
 import AppealPageNotice from "../components/SendAppeal/AppealPageNotice";
 import { useState } from "react";
 import StandartLayout from "../layouts/StandartLayout";
+import DocumentLink from "../components/Document/DocumentLink";
 
 export default function SendRequest() {
     const [surname, setSurname] = useState('')
@@ -125,10 +126,16 @@ export default function SendRequest() {
                             }}
                         />
 
-                        <Link
-                            href={`${process.env.APIpath}/uploads/Obrashheniya_v_forme_elektronnogo_dokumenta_cherez_oficzialnyj_sajt_2557efe2fe.pages`}>
-                            <a>Я ознакомлен с Политикой обработки персональных данных и принимаю публичную Оферту</a>
-                        </Link>
+                        {/* <Link
+                            href={`${process.env.APIpath}/uploads/politika_obrabotki_personalnyh_dannyh_e79f438d7a.pdf?updated_at=2022-11-24T03:08:46.185Z`} className="">
+                             
+                        </Link> */}
+                        <div className="flex items-center gap-2">
+                            <p>Я ознакомлен с</p>
+                            <DocumentLink
+                                filename="Политикой обработки персональных данных"
+                                url={`${process.env.APIpath}/uploads/politika_obrabotki_personalnyh_dannyh_e79f438d7a.pdf?updated_at=2022-11-24T03:08:46.185Z`} />
+                            <p>и принимаю публичную Оферту</p></div>
                     </div>
 
                     <button

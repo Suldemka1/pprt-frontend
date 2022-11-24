@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import {AiFillPhone, AiOutlineMail} from 'react-icons/ai'
 import Image from 'next/image'
+import myImageLoader from '../../loader'
 
 const Footer = (props) =>
     <footer className="sticky top-[100vh] bg-blue-900 dark:bg-gray-200 p-4 font-light">
@@ -21,10 +22,10 @@ const Footer = (props) =>
                     </div>
                     <div className="flex gap-4">
                         <Link className="cursor-pointer" href="https://vk.com/club132363710">
-                            <a><Image alt='some' src="/vk_logo.png" width={30} height={30} className="cursor-pointer dark:grayscale"/></a>
+                            <a><Image loader={myImageLoader} alt='some' src="/vk_logo.png" width={30} height={30} className="cursor-pointer dark:grayscale"/></a>
                         </Link>
                         <Link className="cursor-pointer" href="https://t.me/polpredstvotuva">
-                            <a><Image alt='some' src="/tg_logo.png" width={30} height={30} className="cursor-pointer dark:grayscale"/></a>
+                            <a><Image loader={myImageLoader} alt='some' src="/tg_logo.png" width={30} height={30} className="cursor-pointer dark:grayscale"/></a>
                         </Link>
                     </div>
                 </div>

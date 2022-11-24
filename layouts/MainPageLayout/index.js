@@ -21,7 +21,7 @@ const MainPageLayout = ({ children }) => {
         </div>
       </div>
 
-      <div className="container mx-auto text-black font-light min-h-[800px]">
+      <div className="container mx-auto text-black font-light min-h-[800px] py-3">
 
         {children}
       </div>

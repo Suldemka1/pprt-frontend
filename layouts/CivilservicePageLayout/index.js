@@ -38,7 +38,7 @@ const CivilservicePageLayout = ({ children }) => {
             <SidebarMenuItem title="Условия и результаты конкурсов на замещение вакантных должностей государственной гражданской службы" url='/civilservice/results' />
           </SidebarMenu>
 
-          <div className="xs:full md:w-9/12 leading-7 [&>p]:pb-3 [&>ul]:list-disc translate-x-6">
+          <div className="xs:full md:w-9/12 leading-7 [&>p]:pb-3 [&>ul]:list-disc translate-x-6 py-3">
             {children}
           </div>
         </div>

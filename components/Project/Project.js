@@ -3,6 +3,7 @@ import Link from 'next/link'
 import project from './project.module.scss'
 import parse from 'html-react-parser'
 import {PageName} from '../PageName/PageName'
+import myImageLoader from '../../loader'
 
 const ProjectCard = (params) =>
     <div className={project.card}>
@@ -12,7 +13,7 @@ const ProjectCard = (params) =>
 
         <div className={project.body}>
             <div className='img_container_md'>
-                <Image alt='some' src={process.env.APIpath + params.image} width={300} height={200} layout="responsive"
+                <Image loader={myImageLoader} alt='some' src={process.env.APIpath + params.image} width={300} height={200} layout="responsive"
                        objectFit='cover' className='dark:grayscale'/>
             </div>
 

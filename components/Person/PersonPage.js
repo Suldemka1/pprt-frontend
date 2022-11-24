@@ -4,6 +4,7 @@ import parser from "html-react-parser";
 import ImageViewer from "react-simple-image-viewer";
 import {useCallback, useState} from "react";
 import Head from "next/head";
+import myImageLoader from "../../loader";
 
 export const PersonPage = (params) => {
     const [currentImage, setCurrentImage] = useState(0)
@@ -33,7 +34,7 @@ export const PersonPage = (params) => {
                 <div className="flex xs:flex-col md:flex-row gap-5">
 
                     <div className="min-w-fit max-w-full">
-                        <Image alt='some' src={`${process.env.APIpath}` + params.preview_image} width={400} height={400}
+                        <Image loader={myImageLoader} alt='some' src={`${process.env.APIpath}` + params.preview_image} width={400} height={400}
                                objectFit="cover" className="dark:grayscale"/>
                     </div>
 

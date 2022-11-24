@@ -34,7 +34,7 @@ const ActivityPageLayout = ({ children }) => {
               url='/activity/npa' />
           </SidebarMenu>
 
-          <div className='xs:full md:w-9/12 leading-7 [&>p]:pb-3 [&>ul]:list-disc translate-x-6'>
+          <div className='xs:full md:w-9/12 leading-7 [&>p]:pb-3 [&>ul]:list-disc translate-x-6 py-3'>
             {children}
           </div>
         </div>

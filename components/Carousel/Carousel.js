@@ -4,6 +4,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import {useCallback} from "react";
 import Link from "next/link";
 import MyCarousel from "../MyCarousel/MyCarousel";
+import myImageLoader from '../../loader';
 
 export default function NewsCarousel(params, sliderLinks) {
 
@@ -32,6 +33,7 @@ export default function NewsCarousel(params, sliderLinks) {
                             <Link href={item.url} key={item.id} className="min-w-60 min-h-60 cursor-pointer">
                                 <Image
                                     src={`${process.env.APIpath}${item.images.url}`}
+                                    loader={myImageLoader}
                                     alt="First slide"
                                     width={250}
                                     height={240}
@@ -46,47 +48,4 @@ export default function NewsCarousel(params, sliderLinks) {
             </div>
         </div>
     )
-}
-
-
-{/*<div className="overflow-hidden" ref={emblaRef}>*/
-}
-{/*    <div className="flex">*/
-}
-{/*        {*/
-}
-{/*            params.map((item) =>*/
-}
-
-{/*                <div key={item.id} className="flex-[0_0_100%]">*/
-}
-{/*                    <Image*/
-}
-{/*                        src={`${process.env.APIpath}${item.image.url}`}*/
-}
-{/*                        alt="First slide"*/
-}
-{/*                        width={960}*/
-}
-{/*                        height={720}*/
-}
-{/*                        layout="responsive"*/
-}
-{/*                        objectFit='cover'*/
-}
-{/*                        priority*/
-}
-{/*                        className='dark:grayscale'*/
-}
-{/*                    />*/
-}
-{/*                </div>*/
-}
-{/*            )*/
-}
-{/*        }*/
-}
-{/*    </div>*/
-}
-{/*</div>*/
 }

@@ -6,6 +6,7 @@ import MyCarousel from "../components/MyCarousel/MyCarousel";
 import PostCard from "../components/Posts/PostCard";
 import MainPageLayout from '../layouts/MainPageLayout';
 import StandartLayout from '../layouts/StandartLayout';
+import myImageLoader from '../loader';
 
 //предупреждаю, стили писал на отъебись если что пиши звони +79010177164 suldemka1@gmail.com
 
@@ -63,7 +64,7 @@ const Home = ({ content, news, page, pageSize, pageCount, total, links, sliderLi
             <MainPageLayout>
                 {/* рисует слайдер на главной странице и ссылки справа, можно не трогать, код меняется из компонента */}
                 <div className="flex xs:flex-col md:flex-row gap-1">
-                    <div className="xs:w-full md:w-4/5 max-w-4/5 flex flex-col overflow-hidden relative">
+                    <div className="xs:w-full md:w-4/5 max-w-4/5 flex flex-col relative">
                         <MyCarousel content={content} />
                     </div>
                     <div className="flex xs:flex-row md:flex-col justify-between xs:w-full md:w-1/5 min-w-40 min-h-40">
@@ -73,6 +74,7 @@ const Home = ({ content, news, page, pageSize, pageCount, total, links, sliderLi
                                     <Link href={item.url} key={item.id} className="min-w-60 min-h-60 cursor-pointer">
                                         <a>
                                             <Image
+                                                loader={myImageLoader}
                                                 src={`${process.env.APIpath}${item.image.url}`}
                                                 alt="First slide"
                                                 width={250}
@@ -118,7 +120,7 @@ const Home = ({ content, news, page, pageSize, pageCount, total, links, sliderLi
                             links.map((item) =>
                                 <Link href={item.url} key={item.id}>
                                     <a>
-                                        <Image alt='some' key={item.id} src={process.env.APIpath + item.image.url} width={240}
+                                        <Image loader={myImageLoader} alt='some' key={item.id} src={process.env.APIpath + item.image.url} width={240}
                                             height={240} />
                                     </a>
                                 </Link>
@@ -128,7 +130,6 @@ const Home = ({ content, news, page, pageSize, pageCount, total, links, sliderLi
                 </div>
             </MainPageLayout>
         </StandartLayout>
-
     )
 }
 

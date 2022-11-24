@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import Swipe from "react-easy-swipe";
 import Image from "next/image";
+import myImageLoader from "../../loader";
 
 
 const MyCarousel = (params) => {
@@ -43,6 +44,7 @@ const MyCarousel = (params) => {
                                     : "hidden"
                             }>
                                 <Image
+                                loader={myImageLoader}
                                     src={`${process.env.APIpath}${slide.image.url}`}
                                     alt="This is a carousel slide"
                                     layout={"responsive"}
