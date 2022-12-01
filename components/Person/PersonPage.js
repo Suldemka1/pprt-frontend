@@ -1,8 +1,8 @@
-import {PageName} from "../PageName/PageName";
+import { PageName } from "../PageName/PageName";
 import Image from "next/image";
 import parser from "html-react-parser";
 import ImageViewer from "react-simple-image-viewer";
-import {useCallback, useState} from "react";
+import { useCallback, useState } from "react";
 import Head from "next/head";
 import myImageLoader from "../../loader";
 
@@ -28,14 +28,19 @@ export const PersonPage = (params) => {
                 </title>
             </Head>
 
-            <PageName title={params.position}/>
+            <PageName title={params.position} />
 
             <div className="border border-black rounded-md">
                 <div className="flex xs:flex-col md:flex-row gap-5">
 
-                    <div className="min-w-fit max-w-full">
-                        <Image loader={myImageLoader} alt='some' src={`${process.env.APIpath}` + params.preview_image} width={400} height={400}
-                               objectFit="cover" className="dark:grayscale"/>
+                    <div className="relative min-w-[200px] min-h-[250px] max-w-[400px] max-h-[400px">
+                        <Image
+                            loader={myImageLoader}
+                            alt='some'
+                            src={process.env.APIpath + params.preview_image}
+                            layout="fill"
+                            objectFit="contain"
+                            className="dark:grayscale" />
                     </div>
 
                     <div className="p-3">
@@ -68,18 +73,19 @@ export const PersonPage = (params) => {
                 </div>
             </div>
 
-            <div>
+            <div className="grid grid-cols-5">
                 {params.images.map((item, index) =>
-
-                    <Image
-                        alt="some"
-                        src={item}
-                        width={350}
-                        height={233}
-                        objectFit='contain'
-                        key={index}
-                        onClick={() => openImageViewer(index)}
-                        className="dark:grayscale"/>
+                    <div className="flex items-start justify-start relative min-w-[200px] min-h-[250px] max-w-[400px] max-h-[400px]">
+                        <Image
+                            loader={myImageLoader}
+                            alt="some"
+                            src={item}
+                            layout="fill"
+                            objectFit='contain'
+                            key={index}
+                            onClick={() => openImageViewer(index)}
+                            className="" />
+                    </div>
                 )}
             </div>
 

@@ -18,7 +18,7 @@ export const PersonCard = (params) => {
                             xs:w-full xs:items-center xs:justify-center
                             sm:w-full sm:items-center sm:justify-start"
             >
-                <h3 className="md:text-lg w-10/12">
+                <h3 className="xs:text-md md:text-lg w-10/12">
                     {params.position}
                 </h3>
 
@@ -31,15 +31,23 @@ export const PersonCard = (params) => {
                               md:flex-row md:justify-start md:items-left
                               lg:flex-row lg:justify-start lg:items-left"
             >
-                <Image loader={myImageLoader} src={process.env.APIpath + params.avatar.url} alt="some" width={200} height={200} objectFit="cover" className="w-40 h-40 rounded-full" />
+                <Image
+                    loader={myImageLoader}
+                    src={process.env.APIpath + params.avatar.url}
+                    alt="some"
+                    width={200}
+                    height={200}
+                    objectFit="cover"
+                    className="w-40 h-40 rounded-full" />
+
                 <div className="flex flex-col justify-between gap-5">
-                    <div className="flex flex-col gap-2 text-2xl">
+                    <div className="flex flex-col sm:text-lg md:text-2xl">
                         <p>{params.surname}</p>
                         <p>{params.name}</p>
                         <p>{params.patronymic}</p>
                     </div>
 
-                    <div className="text-lg">
+                    <div className="sm:text-sm md:text-xl">
                         <p>{params.phone}</p>
                         <p>{params.email}</p>
                     </div>
