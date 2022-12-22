@@ -128,14 +128,14 @@ export default function SendRequest() {
 
                         {/* <Link
                             href={`${process.env.APIpath}/uploads/politika_obrabotki_personalnyh_dannyh_e79f438d7a.pdf?updated_at=2022-11-24T03:08:46.185Z`} className="">
-                             
+
                         </Link> */}
                         <div className="flex items-center gap-2">
-                            <p>Я ознакомлен с</p>
+                            <p>Я принимаю</p>
                             <DocumentLink
-                                filename="Политикой обработки персональных данных"
-                                url={`${process.env.APIpath}/uploads/politika_obrabotki_personalnyh_dannyh_e79f438d7a.pdf?updated_at=2022-11-24T03:08:46.185Z`} />
-                            <p>и принимаю публичную Оферту</p></div>
+                                filename="Политику обработки персональных данных"
+                                url={`/uploads/politika_obrabotki_personalnyh_dannyh_e79f438d7a.pdf?updated_at=2022-11-24T03:08:46.185Z`} />
+                            </div>
                     </div>
 
                     <button

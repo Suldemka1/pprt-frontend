@@ -65,39 +65,41 @@ export const PersonPage = (params) => {
                 </div>
 
                 <div className="flex flex-col bg-gray-100 border rounded-b-lg p-3 text-2xl gap-3">
-                    <div className="font-normal">Контактные данные</div>
-                    <div className="flex flex-col gap-2">
-                        <div className="text-xl">{params.email}</div>
-                        <div className="text-xl">{params.phone}</div>
+                    <div>
+                        <div className="font-normal">Контактные данные</div>
+                        <div className="flex flex-col gap-2">
+                            <div className="text-xl">{params.email}</div>
+                            <div className="text-xl">{params.phone}</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div className="grid grid-cols-5">
-                {params.images.map((item, index) =>
-                    <div className="flex items-start justify-start relative min-w-[200px] min-h-[250px] max-w-[400px] max-h-[400px]">
-                        <Image
-                            loader={myImageLoader}
-                            alt="some"
-                            src={item}
-                            layout="fill"
-                            objectFit='contain'
-                            key={index}
-                            onClick={() => openImageViewer(index)}
-                            className="" />
-                    </div>
-                )}
+                {/*{params.images.map((item, index) =>*/}
+                {/*    <div key={index} className="flex items-start justify-start relative min-w-[200px] min-h-[250px] max-w-[400px] max-h-[400px]">*/}
+                {/*        <Image*/}
+                {/*            loader={myImageLoader}*/}
+                {/*            alt="some"*/}
+                {/*            src={item}*/}
+                {/*            layout="fill"*/}
+                {/*            objectFit='contain'*/}
+                {/*            key={index}*/}
+                {/*            onClick={() => openImageViewer(index)}*/}
+                {/*            className="" />*/}
+                {/*    </div>*/}
+                {/*)}*/}
             </div>
 
-            {
-                isViewerOpen && (<ImageViewer
-                    src={params.images}
-                    currentIndex={currentImage}
-                    disableScroll={false}
-                    closeOnClickOutside={true}
-                    onClose={closeImageViewer}
-                />)
-            }
+            {/*{*/}
+            {/*    isViewerOpen && (<ImageViewer*/}
+            {/*        src={params.images}*/}
+            {/*        currentIndex={currentImage}*/}
+            {/*        disableScroll={false}*/}
+            {/*        closeOnClickOutside={true}*/}
+            {/*        onClose={closeImageViewer}*/}
+            {/*    />)*/}
+            {/*}*/}
         </div>
     )
 

@@ -6,6 +6,7 @@ import { FaRegEye } from 'react-icons/fa'
 import Image from 'next/image';
 import HeaderSearchField from './HeaderSearchField';
 import myImageLoader from '../../loader';
+import Script from 'next/script';
 
 const Header = observer((props, { children }) => {
 
@@ -37,7 +38,7 @@ const Header = observer((props, { children }) => {
             </div>
             <HeaderNavbar />
 
-
+           
         </header>
     )
 })

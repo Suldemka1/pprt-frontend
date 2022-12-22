@@ -8,6 +8,7 @@ import DarkMode from "../components/Eyes";
 import Script from 'next/script';
 import Image from 'next/image';
 import Document from './_document';
+import Header from '../components/Header';
 
 const MyApp = observer(({ Component, pageProps }) => (
   <>
@@ -17,13 +18,18 @@ const MyApp = observer(({ Component, pageProps }) => (
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" href="/tuvan_herb.png" />
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={true}></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"></link>
+
       {/* <link href="/dist/css/bvi.min.css" rel="stylesheet"></link> */}
     </Head>
-
-    {theme.theme === 'dark' && (<DarkMode />)}
+    <Script async src="https://lidrekon.ru/slep/js/jquery.js"
+    />
+    <Script async src="https://lidrekon.ru/slep/js/uhpv-full.min.js"
+    />
     <div className='min-h-screen flex flex-col'>
+      <Header />
       <Component {...pageProps} />
+      <Footer />
     </div>
     {/* <Script src="/dist/js/bvi.min.js"></Script> */}
   </>

@@ -59,11 +59,13 @@ export const PersonCard = (params) => {
                             xs:w-full xs:items-center xs:justify-center
                             lg:justify-end"
             >
-                <button className="button dark:bg-gray-500" onClick={() => {
-                    router.push(`/management/${params.id}`)
-                }}>
-                    Перейти в профиль
-                </button>
+
+                <p>Время приема: каждую неделю в четверг с 16:30 </p>
+                {/*<button className="button dark:bg-gray-500" onClick={() => {*/}
+                {/*    router.push(`/management/${params.id}`)*/}
+                {/*}}>*/}
+                {/*    Перейти в профиль*/}
+                {/*</button>*/}
             </div>
         </div>
     )
